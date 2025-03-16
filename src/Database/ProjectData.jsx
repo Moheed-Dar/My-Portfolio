@@ -7,6 +7,7 @@ import img5 from '../Assets/Projectimg/Gitprofile.jpg'
 import img6 from '../Assets/Projectimg/Shoping web.jpeg'
 import img7 from '../Assets/Projectimg/Chatbot.jpeg'
 import img8 from '../Assets/Projectimg/color generator.webp'
+import gitimg from '../Assets/Projectimg/github.png'
 // import img9 from '../Assets/Projectimg/construction branding blog.jpg'
 import img10 from '../Assets/Projectimg/home designer.avif'
 
@@ -17,7 +18,9 @@ const Projectdata = [
         technology: "ReactJs, TailwindCSS, ExpressJs, Firebase, JWT",
         details: "A web-based dashboard for real-time analytics, data visualization, and user role management, helping businesses monitor key metrics efficiently.",
         state: "Coming Soon",
-        link:""
+        link:"",
+        git:gitimg,
+        gitlink:"  ",
     },
     {
         image: img1,
@@ -25,7 +28,9 @@ const Projectdata = [
         technology: "ReactJs, Bootstrap, APIs",
         details: "A weather forecasting app that provides real-time updates, including temperature, humidity, and wind speed, using OpenWeather API.",
         state: "Deployed",
-        link:"https://react-project-3-weather-app.vercel.app/"
+        link:"https://react-project-3-weather-app.vercel.app/",
+        git:gitimg,
+        gitlink:"https://github.com/Moheed-Dar/React-Project-3-Weather-App/tree/main/Weather-app",
     },
     {
         image: img8,
@@ -33,7 +38,9 @@ const Projectdata = [
         technology: "HTML, CSS, JavaScript, Bootstrap",
         details: "An interactive tool that generates random colors, displays their hex and RGB values, and allows users to copy colors for design projects.",
          state: "Deployed",
-         link:""
+         link:"",
+         git:gitimg,
+         gitlink:"https://github.com/Moheed-Dar/Color-Palette-Generator ",
     },
     {
         image: img4,
@@ -41,7 +48,9 @@ const Projectdata = [
         technology: "ReactJs, TailwindCSS, Socket.io, ExpressJs, MongoDB",
         details: "A social networking platform where users can create posts, like, comment, follow others, and chat in real-time with secure authentication.",
          state: "Coming Soon",
-         link:""
+         link:"",
+         git:gitimg,
+         gitlink:" ",
     },
     {
         image: img6,
@@ -49,7 +58,9 @@ const Projectdata = [
         technology: "NextJS, TailwindCSS, MaterialUI",
         details: "A modern eCommerce platform with product browsing, cart management, secure checkout, user authentication, and order tracking.",
         state: "Coming Soon",
-        link:""
+        link:"",
+        git:gitimg,
+        gitlink:" ",
     },
     {
         image: img7,
@@ -57,7 +68,9 @@ const Projectdata = [
         technology: "ReactJs, TailwindCSS, APIs, NodeJS",
         details: "An AI-powered chatbot that understands user queries, provides automated responses, and assists with tasks in real-time conversations.",
         state: "Coming Soon",
-        link:""
+        link:"",
+        git:gitimg,
+        gitlink:" ",
     },
     {
         image: img10,
@@ -65,7 +78,9 @@ const Projectdata = [
         technology: "NextJs, TypeScript, TailwindCSS, APIs ",
         details: "A home design tool that allows users to visualize and customize interior and exterior spaces with interactive layouts and 3D elements.",
         state: "Coming Soon",
-        link:""
+        link:"",
+        git:gitimg,
+        gitlink:" ",
     },
     {
         image: img5,
@@ -73,7 +88,9 @@ const Projectdata = [
         technology: "HTML, CSS, JavaScript, APIs",
         details: "A tool that allows users to search GitHub profiles, displaying user details, repositories, and other information using the GitHub API.",
         state: "Deployed",
-        link: "https://gitfilefindx.netlify.app/"
+        link: "https://gitfilefindx.netlify.app/",
+        git:gitimg,
+        gitlink:" https://github.com/Moheed-Dar/Github-Profile-Finder ",
     }
 ]
 export default Projectdata
