@@ -56,7 +56,7 @@ const Projectdata = [
         name: "ChatBot App",
         technology: "ReactJs, TailwindCSS, APIs, NodeJS",
         details: "An AI-powered chatbot that understands user queries, provides automated responses, and assists with tasks in real-time conversations.",
-        state: "Pending....",
+        state: "Coming Soon",
         link:""
     },
     {
@@ -69,21 +69,11 @@ const Projectdata = [
     },
     {
         image: img5,
-        name: "Home Design App",
-        technology: "NextJs, TypeScript, TailwindCSS, APIs ",
-        details: "A home design tool that allows users to visualize and customize interior and exterior spaces with interactive layouts and 3D elements.",
-        state: "Coming Soon",
-        link:"https://gitfilefindx.netlify.app/"
-    },
+        name: "GitHub Profile Finder",
+        technology: "HTML, CSS, JavaScript, APIs",
+        details: "A tool that allows users to search GitHub profiles, displaying user details, repositories, and other information using the GitHub API.",
+        state: "Deployed",
+        link: "https://gitfilefindx.netlify.app/"
+    }
 ]
 export default Projectdata
-
-// const icons = {
-//     "E-Dashboard Web App": [<FaReact />, <FaNodeJs />],
-//     "Weather App": [<FaReact />, <FaBootstrap />],
-//     "Color Generator": [<FaHtml5 />, <FaCss3Alt />],
-//     "Social Media App": [<FaReact />, <FaNodeJs />],
-//     "Shopping Website": [<FaReact />, <FaCss3Alt />, <FaNodeJs />],
-//     "ChatBot App": [<FaReact />, <FaNodeJs />],
-//     "Home Design App": [<FaReact />, <FaNodeJs />]
-// };
