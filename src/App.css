@@ -1,0 +1,103 @@
+/* #Logo{
+    filter:saturate(2);
+    filter:hue-rotate(100deg)
+} */
+ /* these are borders of porjects*/
+ @keyframes borderRotate {
+  0% {
+    border-color: rgba(255, 0, 0, 0.8);
+  } /* Red */
+  25% {
+    border-color: rgba(0, 255, 0, 0.8);
+  } /* Green */
+  50% {
+    border-color: rgba(0, 0, 255, 0.8);
+  } /* Blue */
+  75% {
+    border-color: rgba(255, 255, 0, 0.8);
+  } /* Yellow */
+  100% {
+    border-color: rgba(255, 0, 0, 0.8);
+  } /* Back to Red */
+}
+.animate-border {
+  border-width: 1px;
+  border-style: dashed;
+  animation: borderRotate 3s infinite linear;
+}
+.animate-border:hover {
+  border-width: 1px;
+  border-style: dashed;
+  animation: borderRotate 3s infinite linear;
+}
+
+/*these are below dots of pojects*/
+@keyframes dotColorChange {
+  0% {
+    color: rgb(233, 173, 45);
+  }
+  25% {
+    color: rgb(233, 67, 45);
+  }
+  50% {
+    color: rgb(76, 230, 45);
+  } /* Gold */
+  75% {
+    color: rgb(45, 230, 122);
+  } /* Gold */
+  100% {
+    color: rgb(155, 14, 174);
+  }
+}
+.slick-dots li.slick-active button:before {
+  animation: dotColorChange 2s infinite ease-in-out;
+}
+/*  these are left and right arrow of project  */
+@keyframes arrowColorChange {
+  0% {
+    color: rgb(233, 173, 45);
+  }
+  25% {
+    color: rgb(233, 67, 45);
+  }
+  50% {
+    color: rgb(76, 230, 45);
+  } /* Gold */
+  75% {
+    color: rgb(45, 230, 122);
+  } /* Gold */
+  100% {
+    color: rgb(155, 14, 174);
+  } /* Back to yellow */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  animation: arrowColorChange 2s infinite ease-in-out ;
+}
+
+@keyframes glowEffect {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(173, 216, 230, 0.8); }
+    50% { box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 20px rgba(173, 216, 230, 1); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(173, 216, 230, 0.8); }
+}
+
+.glowing-hr {
+    height: 2px;
+    border: none;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.8));
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(173, 216, 230, 0.8);
+    animation: glowEffect 1s infinite alternate;
+}
+
+#projimg {
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+#projimg:hover {
+    box-shadow: 0px 4px 15px 2px rgba(255, 255, 255, 0.733);
+}
+#projbutton:hover{
+        background-color: #079c51;
+        color:white;
+}
