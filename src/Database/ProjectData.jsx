@@ -10,17 +10,16 @@ import img8 from '../Assets/Projectimg/color generator.webp'
 import gitimg from '../Assets/Projectimg/github.png'
 // import img9 from '../Assets/Projectimg/construction branding blog.jpg'
 import img10 from '../Assets/Projectimg/home designer.avif'
-
 const Projectdata = [
     {
-        image: img3,
-        name: "E-Dashboard Web App",
-        technology: "ReactJs, TailwindCSS, ExpressJs, Firebase, JWT",
-        details: "A web-based dashboard for real-time analytics, data visualization, and user role management, helping businesses monitor key metrics efficiently.",
-        state: "Coming Soon",
-        link:"",
+        image: img5,
+        name: "GitHub Profile Finder",
+        technology: "HTML, CSS, JavaScript, Bootstrap, APIs",
+        details: "A tool that allows users to search GitHub profiles, displaying user details, repositories, and other information using the GitHub API.",
+        state: "Deployed",
+        link: "https://gitfilefindx.netlify.app/",
         git:gitimg,
-        gitlink:"  ",
+        gitlink:" https://github.com/Moheed-Dar/Github-Profile-Finder ",
     },
     {
         image: img1,
@@ -81,16 +80,16 @@ const Projectdata = [
         link:"",
         git:gitimg,
         gitlink:" ",
-    },
-    {
-        image: img5,
-        name: "GitHub Profile Finder",
-        technology: "HTML, CSS, JavaScript, APIs",
-        details: "A tool that allows users to search GitHub profiles, displaying user details, repositories, and other information using the GitHub API.",
-        state: "Deployed",
-        link: "https://gitfilefindx.netlify.app/",
+    },{
+        image: img3,
+        name: "E-Dashboard Web App",
+        technology: "ReactJs, TailwindCSS, ExpressJs, Firebase, JWT",
+        details: "A web-based dashboard for real-time analytics, data visualization, and user role management, helping businesses monitor key metrics efficiently.",
+        state: "Coming Soon",
+        link:"",
         git:gitimg,
-        gitlink:" https://github.com/Moheed-Dar/Github-Profile-Finder ",
-    }
+        gitlink:"  ",
+    },
+    
 ]
 export default Projectdata

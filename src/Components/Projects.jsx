@@ -52,7 +52,7 @@ const Projects = () => {
       <Slider  {...settings} >
         {Projectdata.map((item, index) => (
           <div key={index} id="imgid" className="shadow-4xl p-2   rounded-xl" >
-            <a href={item.link} target='_blank' >
+            
               <div id="projimg" className="relative group h-60 flex justify-center items-center m-3 overflow-hidden rounded-lg">
                 <div className="relative h-full w-full overflow-hidden group">
                   {/* Overlay Div */}
@@ -65,11 +65,13 @@ const Projects = () => {
                   />
                 </div>
                 {/* this is demo project link */}
+                <a href={item.link} target='_blank' >
                 <button
                   id="projbutton"
-                  className="absolute left-1/2 -translate-x-1/2 top-0 bg-[#d3f733a2] text-gray-700 px-6 py-0.5 text-lg rounded-bl-lg rounded-br-lg shadow-md opacity-0 group-hover:opacity-100 transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out z-10">
-                  Visit
+                  className="absolute left-1/2 -translate-x-1/2 top-0 bg-[#d3f733a2] text-gray-800 px-6 py-0.5 text-lg rounded-bl-lg rounded-br-lg shadow-md opacity-0 group-hover:opacity-100 transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out z-10">
+                  Watch
                 </button>
+                </a>
                 {/* <img src={item.git}  className='absolute left-1 bottom-1 bg-[#d3f73300] text-gray-700 px-6 py-0.5 text-lg rounded-bl-lg rounded-br-lg shadow-md opacity-0  group-hover:opacity-100 transform -translate-x-full group-hover:translate-x-0 transition-all duration-500 ease-in-out z-10' ></img> */}
                 {/* this is git code img */}
                 <a href={item.gitlink} target="_blank" rel="noopener noreferrer">
@@ -85,7 +87,7 @@ const Projects = () => {
               <p className="text-[#59ffa0] text-sm text-start px-4  ">{item.technology}</p>
               <div className="text-gray-300 text-start  px-4  py-2"> <p >{item.details}</p></div>
               <p className='ps-4 text-[#c7a925] ' >{item.state}</p>
-            </a>
+            
           </div>
         ))}
       </Slider>
