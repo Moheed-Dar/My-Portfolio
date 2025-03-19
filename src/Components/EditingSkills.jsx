@@ -7,7 +7,7 @@ const EditingSkills = () => {
         AOS.init()
     }, []);
     return (
-        <section className="py-5 mt-2 md:mt-4 mx-auto m-4 px-10">
+        <section className="py-5 mt-2 md:mt-4 mx-auto m-4 bg-[#0A0A0A] px-10">
             <div className=" rounded-md p-3 md:p-5">
                 <h2 data-aos="zoom-in" className=' p-3 cursor-none  text-center text-2xl md:text-3xl font-bold mb-4  text-[#59ffa0]' > Editing
                     Skills </h2>

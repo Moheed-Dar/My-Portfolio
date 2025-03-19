@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css"
 import Projectdata from '../Database/ProjectData'
 import AOS from 'aos'
 import "aos/dist/aos.css";
-import Skillsbar from './Skillsbar';
+import Skillsbar from './Skillsbar'
 const Projects = () => {
   useEffect(() => {
     AOS.init()
