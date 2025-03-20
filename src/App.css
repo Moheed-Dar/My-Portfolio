@@ -146,3 +146,6 @@
  #skillsbg{
   background-color: #c9ffe027;
  }
+ #ins:hover {
+  color: rgba(193, 53, 132, 1); /* Instagram's logo color */
+}

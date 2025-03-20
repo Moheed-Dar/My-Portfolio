@@ -10,6 +10,7 @@ const Projects = () => {
   useEffect(() => {
     AOS.init()
   })
+
   const settings = {
     dots: true,
     infinite: true,
@@ -54,7 +55,7 @@ const Projects = () => {
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
       <Slider  {...settings} >
         {Projectdata.map((item, index) => (
-          <div data-aos="zoom-out-up" key={index} id="imgid" className="shadow-4xl p-2   rounded-xl" >
+          <div data-aos="zoom-in-down" key={index} id="imgid" className="shadow-4xl p-2   rounded-xl" >
 
             <div id="projimg" className="relative group h-60 flex justify-center items-center m-3 overflow-hidden rounded-lg">
               <div className="relative h-full w-full overflow-hidden group">
@@ -68,13 +69,17 @@ const Projects = () => {
                 />
               </div>
               {/* this is demo project link */}
+
               <a href={item.link} target='_blank' >
+
                 <button
                   id="projbutton"
-                  className="absolute left-1/2 -translate-x-1/2 top-0 bg-[#6b6a6ab0] text-white px-6 py-0.5 text-lg rounded-bl-lg rounded-br-lg shadow-md opacity-0 group-hover:opacity-100 transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 cursor-pointer ease-in-out z-10">
+                  className="absolute left-1/2 -translate-x-1/2  top-0 bg-[#6b6a6ab0] text-white px-6 py-0.5 text-lg rounded-bl-full rounded-br-full shadow-md opacity-0 group-hover:opacity-100 transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 cursor-pointer ease-in-out z-10">
                   Watch
                 </button>
+
               </a>
+
               <a href={item.gitlink} target="_blank" rel="noopener noreferrer">
                 <img
                   src={item.git}
@@ -83,6 +88,7 @@ const Projects = () => {
                filter group-hover:brightness-125  hover:brightness-160 group-hover:contrast-150"
                 />
               </a>
+              
             </div>
             <p className="font-semibold text-gray-50   py-2 px-4  text-start md:text-center">{item.name}</p>
             <p className="text-[#59ffa0] text-sm text-start px-4  ">{item.technology}</p>

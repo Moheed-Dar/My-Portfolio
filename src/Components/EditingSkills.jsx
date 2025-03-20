@@ -7,7 +7,7 @@ const EditingSkills = () => {
         AOS.init()
     }, []);
     return (
-        <section className="py-5 mt-2 md:mt-4 mx-auto m-4 bg-[#0A0A0A] px-10">
+        <section data-aos="zoom-in" className="py-5 mt-2 md:mt-4 mx-auto  container rounded-2xl m-4 bg-[#0A0A0A] px-10">
             <div className=" rounded-md p-3 md:p-5">
                 <h2 data-aos="zoom-in" className=' p-3 cursor-none  text-center text-2xl md:text-3xl font-bold mb-4  text-[#59ffa0]' > Editing
                     Skills </h2>
@@ -18,7 +18,7 @@ const EditingSkills = () => {
                             <img
                                 src={item.imgedt}
                                 alt="Skill Icon"
-                                className="h-16 md:h-22 w-auto object-cover transform transition-transform duration-200 hover:scale-140"
+                                className="h-16 md:h-22 w-auto object-cover transform transition-transform duration-200 hover:scale-140 hover:rotate-3"
                             />
                         </div>
                     ))}
