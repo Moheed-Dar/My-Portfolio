@@ -5,6 +5,7 @@ import "./App.css";
 import { motion, useSpring, useScroll } from "framer-motion"; // ✅ Fixed Import
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
+import Footer from "./Components/Footer";
 // import Navbar from "./Components/Navbar";
 
 function ScrollLinked() {
@@ -41,6 +42,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact/>
+      <Footer/>
     </>
   );
 }
