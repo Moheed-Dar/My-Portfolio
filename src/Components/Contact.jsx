@@ -1,19 +1,141 @@
 import React from 'react';
 import image from '../Assets/contactimg/img3.png'
-{/* <img className='md:w-100 md:block hidden ' src={image} alt="Contact" /> */}
+import Swal from 'sweetalert2'
+
 const Contact = () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+  
+    // ✅ Ensure the API key is correct
+    formData.append("access_key", "acadce1d-c04f-4c18-8817-858cd3515b66");
+  
+    // ✅ Debugging: Check if data is correct
+    console.log("Form Data:", Object.fromEntries(formData));
+  
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData // ✅ Sending FormData directly
+      });
+  
+      const data = await res.json();
+  
+      if (data.success) {
+        Swal.fire({
+          title: "Success!",
+          text: "Message sent successfully!",
+          icon: "success"
+        });
+      } else {
+        console.error("Error:", data);
+        Swal.fire({
+          title: "Error!",
+          text: data.message || "Failed to send message.",
+          icon: "error"
+        });
+      }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "Network error, please try again later.",
+        icon: "error"
+      });
+    }
+  };
+  
+  // const onSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const formData = new FormData(event.target);
+
+  //   formData.append("access_key", "acadce1d-c04f-4c18-8817-858cd3515b66");
+
+  //   const object = Object.fromEntries(formData);
+  //   const json = JSON.stringify(object);
+
+  //   const res = await fetch("https://api.web3forms.com/submit", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json"
+  //     },
+  //     body: json
+  //   }).then((res) => res.json());
+
+  //   if (res.success) {
+  //     Swal.fire({
+  //       title: "Success!",
+  //       text: "Message send successfully!",
+  //       icon: "success"
+  //     });
+  //   }
+  // };
   return (
-    <section className="  pt-5 md:py-8 mt-5 container mx-auto  px-8  " >
-      <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' >Stay in Touch</h2>
+    <section className="  pt-5 md:py-8 mt-6 container mx-auto  px-15  " >
+      <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' > <span className="text-white" >Stay</span> In Touch </h2>
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
-      <div  className='grid grid-cols-2  gap-5  p-8' >
-          <div className='bg-gray-600 ' >
-            
-          </div>
-          <div className='bg-red-400'>
-            <h1>moheed</h1>
-          </div>
+      <div className='grid lg:grid-cols-2    gap-5  p-2 md:p-6' >
+        <div  data-aos="fade-right" className='bg-[#333B37]   p-2 md:p-4 rounded-2xl   ' >
+        <h1  className='md:text-2xl text-md cursor-none text-blue-200 font-semibold text-center py-3' >Let’s Chat!
+        </h1>
+          <form  onSubmit={onSubmit} >
+            {/* username input */}
+            <div className='md:ms-6 ms-1 mt-2 md:p-2 p-1 md:me-5 me-1' >
+              <label className="md:text-xl text-sm md:pb-3  pb-1 cursor-pointer font-semibold text-white" htmlFor="name">
+                Name :
+              </label>
+              <br />
+              <input
+                className="appearance-none border-none text-[#FFFDD0] text-sm md:text-lg placeholder-gray-600 font-medium rounded-md bg-[#171717] outline-none w-full md:w-full md:mt-2 mt-1 md:p-3 p-2 caret-red-500"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your Good Name"
+              />
+            </div>
+            {/* Email input */}
+            <div className='md:ms-6 ms-1 mt-2 md:p-2 p-1 md:me-5 me-1' >
+              <label className="md:text-xl text-sm pb-3  cursor-pointer font-semibold text-white" htmlFor="email">
+                Email Address :
+              </label>
+              <br />
+              <input
+                className="appearance-none border-none text-[#FFFDD0] text-sm md:text-lg placeholder-gray-600 font-medium rounded-md bg-[#171717] outline-none w-full md:w-full md:mt-2 mt-1 md:p-3  p-2 caret-red-500"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your Email Address "
+              />
+            </div>
+            {/* message input */}
+            <div className='md:ms-6 ms-1 mt-2 md:p-2 p-1 md:me-5 me-1' >
+              <label className="md:text-xl text-sm pb-3  cursor-pointer font-semibold text-white" htmlFor="textarea">
+                Message :
+              </label>
+              <br />
+              <textarea
+                className="appearance-none md:h-40  border-none text-[#FFFDD0] text-sm md:text-lg placeholder-gray-600 font-medium rounded-md bg-[#171717] outline-none w-full md:w-full md:mt-2 mt-1 md:p-3 p-2 caret-red-500"
+                type="text"
+                id="textarea"
+                name="message"
+                placeholder="Enter your Message "
+              />
+            </div>
+            <div className='text-center m-2' >
+              <button type="submit" className="bg-gray-950 cursor-pointer text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-8 md:py-2 py-1.5 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                <span className="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div data-aos="fade-left"  className='  lg:block hidden'>
+           <img className='lg:w-110 m-15 md:block hidden ' src={image} alt="Contact" /> 
+        </div>
       </div>
+      <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
     </section>
   );
 };

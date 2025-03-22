@@ -5,7 +5,7 @@ const Services = () => {
         <>
             <section className="py-12 mt-5 container mx-auto rounded-2xl  px-4 bg-black" >
                 <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' >Services</h2>
-                <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
+                <hr className='m-4 ms-20 me-20 text-white md:pt-0.7 pt-0.5 opacity-30 text-1xl glowing-hr ' />
                 <div className=' grid md:grid-cols-3 grid-cols-1 p-8 text-center ' >
                     {ServicesData.map((item) => (
                         <div data-aos="zoom-in" key={item.id} className=' justify-center  p-5 mt-3 rounded-2xl border-3 border-black bg-[#171717] md:mx-2 md:py-4 '  >
@@ -15,7 +15,7 @@ const Services = () => {
                             <div>
                                 <h1 className=' text-white cursor-pointer  font-semibold lg:text-lg md:text-md text-sm' >{item.name} </h1>
                             </div>
-                            <hr className='mt-2  mx-10 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
+                            <hr className='mt-2  mx-10 text-white md:pt-0.7 pt-0.7 opacity-10 text-1xl glowing-hr ' />
                             <div>
                                 <p className='text-[#ADB1B5]  font-medium mb-2 md:text-md text-sm  text-center pt-3 md:px-10 pb-2' >{item.details}</p>
                             </div>

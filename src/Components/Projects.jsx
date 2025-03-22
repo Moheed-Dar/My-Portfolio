@@ -91,9 +91,9 @@ const Projects = () => {
               
             </div>
             <p className="font-semibold text-gray-50   py-2 px-4  text-start md:text-center">{item.name}</p>
-            <p className="text-[#59ffa0] text-sm text-start px-4  ">{item.technology}</p>
+            <p className="text-[#5AE4A8] text-sm text-start px-4  ">{item.technology}</p>
             <div className="text-gray-300 text-start  px-4  py-2"> <p >{item.details}</p></div>
-            <p className='ps-4 text-[#c7a925] ' >{item.state}</p>
+            <p className='ps-4 text-blue-200 ' >{item.state}</p>
           </div>
         ))}
       </Slider>
