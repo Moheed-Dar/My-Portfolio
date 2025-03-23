@@ -8,7 +8,7 @@ const Services = () => {
                 <hr className='m-4 ms-20 me-20 text-white md:pt-0.7 pt-0.5 opacity-30 text-1xl glowing-hr ' />
                 <div className=' grid md:grid-cols-3 grid-cols-1 p-8 text-center ' >
                     {ServicesData.map((item) => (
-                        <div data-aos="zoom-in" key={item.id} className=' justify-center  p-5 mt-3 rounded-2xl border-3 border-black bg-[#171717] md:mx-2 md:py-4 '  >
+                        <div data-aos="zoom-in" key={item.id} className=' justify-center  p-5 mt-3 rounded-2xl border-3 border-black bg-[#171717] md:mx-2 md:py-4 hover:shadow-lg hover:shadow-gray-400'  >
                             <div>
                                 <img className='w-10 mx-auto mb-2 cursor-none ' src={item.img} />
                             </div>

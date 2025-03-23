@@ -152,3 +152,34 @@
 
 /* this is contact form styling  */
 
+#movingGradientButton {
+  position: relative;
+  background: linear-gradient(90deg, #59ffa0, white, #59ffa0);
+  background-size: 200% 100%;
+  animation: gradientMove 3s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.vignette {
+  position: relative;
+}
+
+.vignette::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}

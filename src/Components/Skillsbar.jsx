@@ -36,7 +36,7 @@ const Skillsbar = () => {
               <span className="text-white font-medium text-sm md:text-md">75%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-1.5 md:h-2.5 dark:bg-gray-700">
-            <motion.div data-aos="fade-right"  className="bg-yellow-400 h-1.5 md:h-2.5 rounded-full"
+            <motion.div data-aos="fade-right"  className="bg-slate-300 h-1.5 md:h-2.5 rounded-full"
               initial={{ width: '0%' }}
               animate={{ width: '75%' }}
               transition={{ duration: 4, ease: 'easeInOut' }}

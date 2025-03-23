@@ -10,7 +10,7 @@ const EditingSkills = () => {
         <section data-aos="zoom-in" className="py-5 mt-2 md:mt-4 mx-auto  container rounded-2xl m-4 bg-[#0A0A0A] px-10">
             <div className=" rounded-md p-3 md:p-5">
                 <h2 data-aos="zoom-in" className=' p-3 cursor-none  text-center text-2xl md:text-3xl font-bold mb-4  text-[#59ffa0]' > 
-                  <span className='text-white' >Editing</span>  Skills </h2>
+                  <span className='text-white' >Additional</span>  Skills </h2>
                 <hr className=' mt-1 ms-20 me-20 text-white opacity-10 pt-0.7 text-1xl md:mt-4 glowing-hr ' />
                 <div className="grid grid-cols-2 md:grid-cols-4   md:pt-7 pt-4 md:mb-10  md:gap-1  md:px-15">
                     {EditingSkill.map((item) => (
