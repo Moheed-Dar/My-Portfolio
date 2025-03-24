@@ -6,7 +6,7 @@ const HeroSection = () => {
         <>
             <div className="bg-gradient-to-b from-black via-gray-600 to-green-000   px-10 mb-15 pt-10 flex flex-col items-center text-white relative">
                 {/* Heading */}
-                <div className="text-center mb-10">
+                <div className="text-center  mt-15  mb-10">
                     <h1 className="text-4xl md:text-5xl font-bold">
                         I'm <span className="text-[#59ffa0] italic">Moheed Dar</span>
                     </h1>
