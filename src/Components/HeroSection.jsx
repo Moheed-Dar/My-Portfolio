@@ -13,7 +13,7 @@ const HeroSection = () => {
     })
     return (
         <>
-            <div className="bg-gradient-to-b from-black via-gray-600 to-green-000 mb-10  px-10  pt-10 flex flex-col items-center text-white relative overflow-hidden">
+            <div className="bg-gradient-to-b from-black  via-gray-600 to-green-000 mb-10  px-15  pt-10 flex flex-col items-center text-white relative overflow-hidden">
                 {/* Heading */}
                 <div data-aos="fade-down"
                     data-aos-duration="2000" className="text-center  mt-15  mb-10">
@@ -44,7 +44,7 @@ const HeroSection = () => {
                 {/* Image + Gradient + Info Boxes */}
                 <div data-aos="fade-right" data-aos-duration="1000" className="relative flex items-center justify-center w-full">
                     {/* Left Box (Client Review) */}
-                    <div className="absolute left-[-30%] top-5  mt-10 md:block hidden -rotate-15  md:left-10 bg-[#222222c4] p-4 rounded-lg shadow-lg w-45  md:w-56 border border-gray-600">
+                    <div className="absolute left-[-30%] top-15  mt-10 md:block hidden -rotate-15  md:left-10 bg-[#222222c4] p-4 rounded-lg shadow-lg w-45   md:w-56 border border-gray-600">
                         <h3 className="text-md font-semibold">Turning Ideas into Reality</h3>
                         <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
                             5.0
@@ -54,7 +54,7 @@ const HeroSection = () => {
                         </p>
                     </div>
                     {/* Left Box (Client Review) */}
-                    <div className="absolute left-[-8%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
+                    <div className="absolute left-[-6%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
                         <h1 className=" text-md text-center font-semibold" >Product Designer</h1>
                     </div>
 
@@ -65,7 +65,7 @@ const HeroSection = () => {
                     </div>
 
                     {/* Right Box (Expertise) */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-10 mt-10 top-5  hidden       md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-1 lg:me-10 mt-10 top-15  hidden       md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">MY EXPERTISE</h3>
                         <div className="mt-2">
                             <p className="flex justify-between text-sm mt-2">
@@ -114,7 +114,7 @@ const HeroSection = () => {
                     {/* Button */}
                     <button
                         id="movingGradientButton"
-                        className="absolute top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                        className="absolute top-[20%] cursor-pointer left-1/2 transform -translate-x-1/2 -translate-y-1/2 
                bg-[#EAF888] text-black font-semibold px-5 py-2 
                rounded-full shadow-lg z-20 
                hover:scale-110 transition-transform duration-300 
