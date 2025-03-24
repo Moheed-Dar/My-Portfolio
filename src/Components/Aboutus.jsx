@@ -1,10 +1,15 @@
-import React from "react";
+import {useEffect} from "react";
 import img2 from "../Assets/aboutimg/img2.jpg";
 import img4 from "../Assets/aboutimg/img4.jpg";
 import img5 from "../Assets/aboutimg/img5.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FiDownload } from "react-icons/fi";
 import { FiChevronDown } from "react-icons/fi";
 const Aboutus = () => {
+     useEffect(() => {
+        AOS.init()
+      })
     return (
         <section className="relative bg-[#0A0A0A] md:m-8 mt-10 rounded-2xl text-white py-16 px-5 flex flex-col items-center">
             <div className="max-w-3xl  text-center md:text-lg   text-sm relative z-20 mix-blend-difference">
