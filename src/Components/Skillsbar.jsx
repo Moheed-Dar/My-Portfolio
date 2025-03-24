@@ -7,7 +7,7 @@ const Skillsbar = () => {
       AOS.init()
     })
   return (
-    <div data-aos="zoom-in" className='md:py-4  md:pb-5 pb-2 mt-2 md:mt-3 rounded-2xl bg-[#0A0A0A] container mx-auto  px-8 ' >
+    <div data-aos="zoom-in" className='md:py-4 md:hidden block  md:pb-5 pb-2 mt-2 md:mt-3 rounded-2xl bg-[#0A0A0A] container mx-auto  px-8 ' >
       <div className='py-12 mt-4 container mx-auto px-8'>
         <h2 data-aos="zoom-in" className='md:p-1 p-1 text-center text-2xl md:text-3xl font-bold mb-4 cursor-none text-[#5AE4A8]'>
           Experience

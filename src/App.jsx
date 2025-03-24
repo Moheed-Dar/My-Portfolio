@@ -6,7 +6,7 @@ import { motion, useSpring, useScroll } from "framer-motion"; // ✅ Fixed Impor
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import Footer from "./Components/Footer";
-import About from "./Components/About";
+// import About from "./Components/About";
 import Aboutus from "./Components/Aboutus";
 // import Navbar from "./Components/Navbar";
 
