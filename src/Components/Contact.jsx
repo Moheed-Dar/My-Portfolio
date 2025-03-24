@@ -82,7 +82,7 @@ const Contact = () => {
   //   }
   // };
   return (
-    <section className="  pt-5 md:py-8 mt-6 container mx-auto  px-15  " >
+    <section className="  pt-5 md:py-8 mt-6 container mx-auto  md:px-15  px-8 " >
       <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' > <span className="text-white" >Stay</span> In Touch </h2>
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
       <div className='grid lg:grid-cols-2    gap-5  p-2 md:p-6' >

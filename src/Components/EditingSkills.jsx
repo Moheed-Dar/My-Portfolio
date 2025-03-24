@@ -14,7 +14,7 @@ const EditingSkills = () => {
                 <hr className=' mt-1 ms-20 me-20 text-white opacity-10 pt-0.7 text-1xl md:mt-4 glowing-hr ' />
                 <div className="grid grid-cols-2 md:grid-cols-4   md:pt-7 pt-4 md:mb-10  md:gap-1  md:px-15">
                     {EditingSkill.map((item) => (
-                        <div data-aos="zoom-in-up" key={item.id} className="p-1 mb-2 cursor-pointer  overflow-hidden rounded-lg flex items-center justify-center group transition-transform duration-300" >
+                        <div data-aos="zoom-in-up" key={item.id} className="p-1  cursor-pointer  overflow-hidden rounded-lg flex items-center justify-center group transition-transform duration-300" >
                             <img
                                 src={item.imgedt}
                                 alt="Skill Icon"
