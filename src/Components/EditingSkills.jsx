@@ -23,7 +23,6 @@ const EditingSkills = () => {
                         </div>
                     ))}
                 </div>
-                <hr className=' mt-1 pt-0.7 md:mx-50 mx-25  text-green-500 opacity-10 text-1xl  md:mt-4 glowing-hr' />
             </div>
         </section>
     )
