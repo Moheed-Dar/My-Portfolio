@@ -11,7 +11,7 @@ const Aboutus = () => {
                 <h2 data-aos="zoom-in" data-aos-duration="1000" className="text-3xl md:text-4xl md:pb-5 pb-3 font-bold text-[#f5ff9a]">
                     WHO AM I ?
                 </h2>
-                <div className="md:m-0 mx-10" >
+                <div className="md:m-0 mx-7" >
                     <p className="text-gray-300 mt-4 leading-relaxed">
                         I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
                     </p>
