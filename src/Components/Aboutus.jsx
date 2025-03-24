@@ -11,7 +11,7 @@ const Aboutus = () => {
                 <h2 data-aos="zoom-in" data-aos-duration="1000" className="text-3xl md:text-4xl md:pb-5 pb-3 font-bold text-[#f5ff9a]">
                     WHO AM I ?
                 </h2>
-                <div className="md:m-0 mx-7" >
+                <div data-aos="zoom-in"  data-aos-duration="1000" className="md:m-0 mx-7" >
                     <p className="text-gray-300 mt-4 leading-relaxed">
                         I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
                     </p>
@@ -55,14 +55,14 @@ const Aboutus = () => {
                     alt="Floating Image"
                     data-aos="fade-up-right"
                     data-aos-duration="2000"
-                    className="w-27 h-27 ml-16 mt-8 overflow-hidden rounded-lg shadow-[40px_20px_50px_rgba(255,255,255,0.3)] -rotate-8 filter saturate-70 brightness-90 vignette"
+                    className="w-27 h-27 ml-16 mt-8 overflow-hidden rounded-lg shadow-[40px_20px_50px_rgba(255,255,255,0.3)] -rotate-8 filter saturate-80 brightness-100 vignette"
                 />
                 <img
                     src={img5}
                     data-aos="fade-up-left"
                     data-aos-duration="2000"
                     alt="Floating Image"
-                    className="w-26 h-25 mr-16 mt-40 rounded-lg  overflow-hidden shadow-[-20px_20px_50px_rgba(255,255,255,0.3)]  rotate-8  filter saturate-80 brightness-90 vignette"
+                    className="w-26 h-25 mr-16 mt-40 rounded-lg  overflow-hidden shadow-[-20px_20px_50px_rgba(255,255,255,0.3)]  rotate-8  filter saturate-80 brightness-100 vignette"
                 />
             </div>
         </section>
