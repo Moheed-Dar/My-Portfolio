@@ -6,7 +6,8 @@ const HeroSection = () => {
         <>
             <div className="bg-gradient-to-b from-black via-gray-600 to-green-000   px-10 mb-15 pt-10 flex flex-col items-center text-white relative">
                 {/* Heading */}
-                <div className="text-center  mt-15  mb-10">
+                <div data-aos="fade-down"
+                        data-aos-duration="2000" className="text-center  mt-15  mb-10">
                     <h1 className="text-4xl md:text-5xl font-bold">
                         I'm <span className="text-[#59ffa0] italic">Moheed Dar</span>
                     </h1>
@@ -38,6 +39,8 @@ const HeroSection = () => {
 
                         {/* Image */}
                         <img
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1000"
                             src={img} // Replace with actual image
                             alt="Moheed Dar"
                             className="relative w-45 md:w-55  rounded-lg object-cover z-10"
