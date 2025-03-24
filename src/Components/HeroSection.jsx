@@ -1,6 +1,7 @@
+import img1 from "../Assets/aboutimg/portfolio1.png";
 import img from "../Assets/aboutimg/portfolio.png";
 import React from "react";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
@@ -107,7 +108,7 @@ const HeroSection = () => {
                     </button>
 
                     {/* Social Icons */}
-                    <div className="flex gap-5 ">
+                    <div className="flex md:gap-5 gap-3 ">
                         <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
                             <FaGithub className="text-white text-3xl hover:text-gray-400 transition-colors" />
                         </a>
@@ -116,6 +117,9 @@ const HeroSection = () => {
                         </a>
                         <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin className="text-white text-3xl hover:text-blue-600 transition-colors" />
+                        </a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                            <FaFacebook className="text-white text-3xl hover:text-blue-600 transition-colors" />
                         </a>
                     </div>
                 </div>
