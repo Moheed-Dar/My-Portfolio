@@ -59,7 +59,7 @@ const HeroSection = () => {
                     </div>
 
                         {/* Right Box (Expertise) */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-8%] sm:me-10   top-15  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-10%] sm:me-10   top-10  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">UI/UX Designer</h3>
 
                     </div>
