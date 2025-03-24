@@ -55,34 +55,8 @@ const Contact = () => {
     }
   };
 
-  // const onSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const formData = new FormData(event.target);
-
-  //   formData.append("access_key", "acadce1d-c04f-4c18-8817-858cd3515b66");
-
-  //   const object = Object.fromEntries(formData);
-  //   const json = JSON.stringify(object);
-
-  //   const res = await fetch("https://api.web3forms.com/submit", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json"
-  //     },
-  //     body: json
-  //   }).then((res) => res.json());
-
-  //   if (res.success) {
-  //     Swal.fire({
-  //       title: "Success!",
-  //       text: "Message send successfully!",
-  //       icon: "success"
-  //     });
-  //   }
-  // };
   return (
-    <section className="  pt-5 md:py-8 mt-6 container mx-auto  md:px-15  px-8 " >
+    <section className="  pt-5 md:py-8 mt-6 container mx-auto  md:px-15  px-10 " >
       <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' > <span className="text-white" >Stay</span> In Touch </h2>
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
       <div className='grid lg:grid-cols-2    gap-5  p-2 md:p-6' >
