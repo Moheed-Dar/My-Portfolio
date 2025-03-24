@@ -8,7 +8,7 @@ const HeroSection = () => {
 
     return (
         <>
-            <div className="bg-gradient-to-b from-black via-gray-600 to-green-000   px-10 mb-5 pt-10 flex flex-col items-center text-white relative">
+            <div className="bg-gradient-to-b from-black via-gray-600 to-green-000  px-10 mb-10 pt-10 flex flex-col items-center text-white relative">
                 {/* Heading */}
                 <div data-aos="fade-down"
                     data-aos-duration="2000" className="text-center  mt-15  mb-10">
