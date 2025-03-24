@@ -2,10 +2,6 @@ import React from 'react'
 import img from '../Assets/aboutimg/img1.jpg'
 import img1 from '../Assets/aboutimg/img2.jpg'
 
-
-
-
-
 const About = () => {
     return (
         <section className=" bg-[#ffffff05]  rounded-2xl  py-12 mt-12  m-4  px-4 md:px-8 max-w-full overflow-hidden"   >
