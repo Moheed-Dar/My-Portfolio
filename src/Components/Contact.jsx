@@ -87,7 +87,7 @@ const Contact = () => {
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
       <div className='grid lg:grid-cols-2    gap-5  p-2 md:p-6' >
         <div data-aos="fade-right" className='bg-[#333B37] md:mt-5 md:mb-5  p-2 md:p-3 rounded-2xl   ' >
-          <h1 className='md:text-2xl text-md cursor-none text-blue-200 font-semibold text-center py-3' >Let’s Chat!
+          <h1 className='md:text-2xl text-md cursor-none text-blue-200 font-semibold text-center py-3' >Talk to Us!
           </h1>
           <form onSubmit={onSubmit} >
             {/* username input */}
