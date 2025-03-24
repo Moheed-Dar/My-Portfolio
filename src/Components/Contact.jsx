@@ -6,29 +6,40 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-
+    
+    const name = formData.get("name").trim();
+    const email = formData.get("email").trim();
+    const message = formData.get("message").trim();
+  
+    // Validation check
+    if (!name || !email || !message) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please fill in all fields before submitting.",
+        icon: "warning"
+      });
+      return;
+    }
+  
     // ✅ Ensure the API key is correct
     formData.append("access_key", "acadce1d-c04f-4c18-8817-858cd3515b66");
-
-    // ✅ Debugging: Check if data is correct
-    console.log("Form Data:", Object.fromEntries(formData));
-
+  
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData // ✅ Sending FormData directly
+        body: formData
       });
-
+  
       const data = await res.json();
-
+  
       if (data.success) {
         Swal.fire({
           title: "Success!",
           text: "Message sent successfully!",
           icon: "success"
         });
+        event.target.reset(); // ✅ Form reset after success
       } else {
-        console.error("Error:", data);
         Swal.fire({
           title: "Error!",
           text: data.message || "Failed to send message.",
@@ -36,7 +47,6 @@ const Contact = () => {
         });
       }
     } catch (error) {
-      console.error("Fetch Error:", error);
       Swal.fire({
         title: "Error!",
         text: "Network error, please try again later.",
