@@ -4,16 +4,16 @@ import React from "react";
 const HeroSection = () => {
     return (
         <>
-            <div className="bg-[#171717] m-20 px-10 mb-10 pt-10 flex flex-col items-center text-white relative">
+            <div className="bg-gradient-to-b from-black via-gray-600 to-green-000   px-10 mb-15 pt-10 flex flex-col items-center text-white relative">
                 {/* Heading */}
                 <div className="text-center mb-10">
                     <h1 className="text-4xl md:text-5xl font-bold">
-                        I'm <h1 className="text-[#EAF888] italic">Moheed Dar</h1>
+                        I'm <span className="text-[#59ffa0] italic">Moheed Dar</span>
                     </h1>
                     <h2 className="text-3xl md:text-5xl mt-2 font-bold">
-                        <h1 className="border-2 border-gray-400 px-4 py-1 rounded-lg inline-block">
+                        <span className="border-2 border-[#373C46] text-[#f2005de5] px-4 py-1 rounded-lg inline-block">
                             Full Stack
-                        </h1>{" "}
+                        </span>
                         Developer
                     </h2>
                 </div>
@@ -21,14 +21,13 @@ const HeroSection = () => {
                 {/* Image + Gradient + Info Boxes */}
                 <div className="relative flex items-center justify-center w-full">
                     {/* Left Box (Client Review) */}
-                    <div className="absolute left-[-10%] top-5 md:block hidden rotate-15  md:left-0 bg-[#222] p-4 rounded-lg shadow-lg w-45  md:w-56 border border-gray-600">
-                        <h3 className="text-md font-semibold">Client Review From Australia</h3>
+                    <div className="absolute left-[-30%] top-5  mt-30 md:block hidden rotate-15  md:left-15 bg-[#222222c4] p-4 rounded-lg shadow-lg w-45  md:w-56 border border-gray-600">
+                        <h3 className="text-md font-semibold">Turning Ideas into Reality</h3>
                         <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
                             5.0
                         </span>
                         <p className="text-sm opacity-80 mt-2">
-                            Outstanding Web Developer, Exceeded All Expectations. Highly
-                            Recommended Without Hesitation.
+                        From a blank screen to a fully functional product—let the transformation begin.
                         </p>
                     </div>
 
@@ -47,7 +46,7 @@ const HeroSection = () => {
 
                     {/* Right Box (Expertise) */}
                     <div className="absolute right-[10%] me-10 top-0  hidden md:block md:right-0 -rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border border-gray-600">
-                        <h3 className="text-md font-semibold">MY EXPERTISE</h3>
+                        <h3 className="text-md text-center font-semibold">MY EXPERTISE</h3>
                         <div className="mt-2">
                             <p className="flex justify-between text-sm mt-2">
                                 <span>FRONTEND</span> <span>80%</span>
