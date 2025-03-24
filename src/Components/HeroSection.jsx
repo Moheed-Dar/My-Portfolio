@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import img1 from "../Assets/aboutimg/portfolio1.png";
 import img from "../Assets/aboutimg/portfolio.png";
 import React from "react";
@@ -8,9 +8,9 @@ import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
- useEffect(() => {
-    AOS.init()
-  })
+    useEffect(() => {
+        AOS.init()
+    })
     return (
         <>
             <div className="bg-gradient-to-b from-black via-gray-600 to-green-000 mb-10  px-10  pt-10 flex flex-col items-center text-white relative overflow-hidden">
@@ -20,23 +20,23 @@ const HeroSection = () => {
                     <h1 className="text-3xl md:text-5xl font-bold">
                         I'm <span className="text-[#59ffa0] italic">Moheed Dar</span>
                     </h1>
-                   
-                        <TypeAnimation
-                            className=" text-3xl  md:text-4xl mt-2 font-bold border-[#373C46] text-red-300 px-4 py-1 rounded-lg inline-block"
-                            sequence={[
-                                "Full Stack",
-                                2000,
-                                "MERN Stack",
-                                2000,
-                                "Javascript+Typescript",
-                                3000,
-                            ]}
-                            wrapper="span"
-                            speed={20}
-                            repeat={Infinity}
-                            cursor={true}
-                        /><br/>
-                         <h2 className="text-3xl md:text-4xl mt-2 font-bold">
+
+                    <TypeAnimation
+                        className=" text-3xl  md:text-4xl mt-2 font-bold border-[#373C46] text-red-300 px-4 py-1 rounded-lg inline-block"
+                        sequence={[
+                            "Full Stack",
+                            2000,
+                            "MERN Stack",
+                            2000,
+                            "Javascript+Typescript",
+                            3000,
+                        ]}
+                        wrapper="span"
+                        speed={20}
+                        repeat={Infinity}
+                        cursor={true}
+                    /><br />
+                    <h2 className="text-3xl md:text-4xl mt-2 font-bold">
                         Developer
                     </h2>
                 </div>
@@ -53,9 +53,19 @@ const HeroSection = () => {
                             From a blank screen to a fully functional product—let the transformation begin.
                         </p>
                     </div>
+                    {/* Left Box (Client Review) */}
+                    <div className="absolute left-[-5%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
+                        <h1 className=" text-md text-center font-semibold" >Product Designer</h1>
+                    </div>
+
+                        {/* Right Box (Expertise) */}
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-8%] sm:me-10   top-15  block   md:hidden  rotate-10 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
+                        <h3 className="text-md text-center font-semibold">UI/UX Designer</h3>
+
+                    </div>
 
                     {/* Right Box (Expertise) */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-10 mt-10 top-5  hidden md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-10 mt-10 top-5  hidden       md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">MY EXPERTISE</h3>
                         <div className="mt-2">
                             <p className="flex justify-between text-sm mt-2">
@@ -80,6 +90,7 @@ const HeroSection = () => {
 
                         </div>
                     </div>
+                    
                 </div>
 
 
@@ -114,13 +125,13 @@ const HeroSection = () => {
 
                     {/* Social Icons */}
                     <div className="flex md:gap-5 gap-3 ">
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/Moheed-Dar" target="_blank" rel="noopener noreferrer">
                             <FaGithub className="text-white text-3xl hover:text-gray-400 transition-colors" />
                         </a>
-                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com/moheeddar" target="_blank" rel="noopener noreferrer">
                             <FaTwitter className="text-white text-3xl hover:text-blue-400 transition-colors" />
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/in/moheeddar" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin className="text-white text-3xl hover:text-blue-600 transition-colors" />
                         </a>
                         <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
