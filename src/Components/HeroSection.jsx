@@ -7,13 +7,13 @@ const HeroSection = () => {
             <div className="bg-[#171717] m-20 px-10 mb-10 pt-10 flex flex-col items-center text-white relative">
                 {/* Heading */}
                 <div className="text-center mb-10">
-                    <h1 className="text-3xl md:text-4xl font-bold">
-                        I'm <span className="text-[#EAF888] italic">Moheed Dar</span>
+                    <h1 className="text-4xl md:text-5xl font-bold">
+                        I'm <h1 className="text-[#EAF888] italic">Moheed Dar</h1>
                     </h1>
-                    <h2 className="text-2xl md:text-3xl mt-2 font-bold">
-                        <span className="border-2 border-gray-400 px-4 py-1 rounded-lg inline-block">
+                    <h2 className="text-3xl md:text-5xl mt-2 font-bold">
+                        <h1 className="border-2 border-gray-400 px-4 py-1 rounded-lg inline-block">
                             Full Stack
-                        </span>{" "}
+                        </h1>{" "}
                         Developer
                     </h2>
                 </div>
