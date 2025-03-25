@@ -186,7 +186,7 @@ const Navbar1 = () => {
                     <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-4 w-32 rounded-full' src={img} alt="Logo" />
                 </div>
                 {/* Desktop Menu */}
-                <nav className="hidden lg:block mt-4 md:py-3  bg-white-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
+                <nav className="hidden lg:block mt-4 md:py-3  bg-gray-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
                     <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
                         <li><a href='#Home'>Home</a></li>
                         <li><a href='#Aboutus'>About</a></li>
