@@ -48,7 +48,7 @@ const Projects = () => {
   };
   return (
     <>
-    <section className="  py-12 mt-5 container mx-auto  px-8  " >
+    <section id="Projects" className=" py-12  md:py-15 mt-5 container mx-auto  px-8  " >
       {/* this is header */}
       {/* <h1 ddata-aos="zoom-in" className='text-2xl md:text-3xl text-[#59ffa0]  text-center ps-8 font-bold cursor-pointer ' >Projects</h1> */}
       <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' >Projects</h2>

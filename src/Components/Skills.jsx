@@ -10,7 +10,7 @@ const Skills = () => {
   }, []);
   return (
     <>
-      <section className="pt-12 mt-2 md:mt-4 mx-auto m-4 px-10">
+      <section id="Skills" className="pt-12 mt-2 md:mt-4 mx-auto m-4 px-10">
         <div className=" rounded-md p-3 md:p-5">
           <h2 data-aos="zoom-in" className=' p-3 cursor-none  text-center text-2xl md:text-3xl font-bold mb-4  text-[#59ffa0]' > Development<span className='text-white' > Skills</span> </h2>
           <hr className='m-4 text-white opacity-10 pt-0.7 text-1xl  md:mt-7 glowing-hr ' />

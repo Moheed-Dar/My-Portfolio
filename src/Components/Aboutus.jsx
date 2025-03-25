@@ -11,7 +11,7 @@ const Aboutus = () => {
         AOS.init()
       })
     return (
-        <section className="relative bg-[#0A0A0A] md:m-8 mt-10 rounded-2xl text-white py-16 px-5 flex flex-col items-center">
+        <section id="Aboutus" className="relative bg-[#0A0A0A] md:m-8 mt-10 rounded-2xl text-white py-16 px-5 flex flex-col items-center">
             <div className="max-w-3xl  text-center md:text-lg   text-sm relative z-20 mix-blend-difference">
                 <h2 data-aos="zoom-in" data-aos-duration="1000" className="text-3xl md:text-4xl md:pb-5 pb-3 font-bold text-[#f5ff9a]">
                     WHO AM I ?
@@ -21,16 +21,15 @@ const Aboutus = () => {
                         I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
                     </p>
                     <p className="text-gray-400 mt-4">
-                        Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <b className="text-green-400 font-semibold" >Projects</b>, which is why I am constantly working to enhance my <b className="text-white font-semibold" >Skills</b>.
+                        Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <span className="text-green-400 font-semibold" >projects</span>, which is why I am constantly working to enhance my <span className="text-white font-semibold" >Skills</span>.
                     </p>
                     <p className="text-gray-400 mt-4 px-10">
-                    I studied at Agriculture University Of Peshawar, where I doing my bachelor's in <b className="text-white font-semibold" >Information Technology</b>.
+                    I studied at Agriculture University Of Peshawar, where I doing my bachelor's in <span className="text-white font-semibold" >Information Technology</span>.
                     </p>
                 </div>
-
-                
                 <div className="flex flex-col items-center">
                     {/* Button */}
+                    
                     <button
                         id="movingGradientButton"
                         className="mt-6 md:px-4 md:py-2 px-5 py-2 text-black font-semibold rounded-full shadow-lg overflow-hidden relative transition-transform duration-300 hover:scale-105 flex items-center gap-2"
@@ -38,6 +37,7 @@ const Aboutus = () => {
                         <span className="relative z-10">Download CV</span>
                         <FiDownload className="text-lg animate-bounce" />
                     </button>
+                
                     <FiChevronDown className="mt-2 text-white text-3xl animate-bounce" />
                 </div>
             </div>

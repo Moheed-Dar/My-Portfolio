@@ -8,8 +8,7 @@ import Services from "./Components/Services";
 import Footer from "./Components/Footer";
 import Aboutus from "./Components/Aboutus";
 import HeroSection from "./Components/HeroSection";
-
-// import Navbar from "./Components/Navbar";
+import Navbar1 from "./Components/Navbar1";
 
 function ScrollLinked() {
   const { scrollYProgress } = useScroll();
@@ -39,6 +38,8 @@ function ScrollLinked() {
 function App() {
   return (
     <>
+      <ScrollLinked />
+      <Navbar1 />
       <HeroSection />
       <Aboutus />
       <Services />
