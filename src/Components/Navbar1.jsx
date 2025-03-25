@@ -187,13 +187,13 @@ const Navbar1 = () => {
                 </div>
                 {/* Desktop Menu */}
                 <nav className="hidden lg:block mt-4 md:py-3  bg-gray-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
-                    <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
-                        <li><a href='#Home'>Home</a></li>
-                        <li><a href='#Aboutus'>About</a></li>
-                        <li><a href='#Services'>Services</a></li>
-                        <li><a href='#Skills'>Skills</a></li>
-                        <li><a href='#Projects'>Projects</a></li>
-                        <li><a href='#Contact'>Contact</a></li>
+                    <ul id="urlink" className='hidden  lg:flex gap-6 font-medium text-cyan-50'>
+                        <li><a className='hover:text-[#59ffa0]' href='#Home'>Home</a></li>
+                        <li><a className='hover:text-[#59ffa0]' href='#Aboutus'>About</a></li>
+                        <li><a className='hover:text-[#59ffa0]'  href='#Services'>Services</a></li>
+                        <li><a className='hover:text-[#59ffa0]' href='#Skills'>Skills</a></li>
+                        <li><a className='hover:text-[#59ffa0]' href='#Projects'>Projects</a></li>
+                        <li><a className='hover:text-[#59ffa0]' href='#Contact'>Contact</a></li>
                     </ul>
                 </nav>
                 {/* navbar button */}
