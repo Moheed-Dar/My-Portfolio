@@ -21,10 +21,10 @@ const Aboutus = () => {
                         I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
                     </p>
                     <p className="text-gray-400 mt-4">
-                        Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <span className="text-green-400 font-semibold" >projects</span>, which is why I am constantly working to enhance my <span className="text-white font-semibold" >Skills</span>.
+                        Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <b className="text-green-400 font-semibold" >Projects</b>, which is why I am constantly working to enhance my <b className="text-white font-semibold" >Skills</b>.
                     </p>
                     <p className="text-gray-400 mt-4 px-10">
-                    I studied at Agriculture University Of Peshawar, where I doing my bachelor's in <span className="text-white font-semibold" >Information Technology</span>.
+                    I studied at Agriculture University Of Peshawar, where I doing my bachelor's in <b className="text-white font-semibold" >Information Technology</b>.
                     </p>
                 </div>
 
