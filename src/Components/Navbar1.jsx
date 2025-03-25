@@ -212,8 +212,8 @@ const Navbar1 = () => {
                         </button>
                     </a>
                 </StyledWrapper>
-                <button className='inline-block lg:hidden pe-3' onClick={openMenu}>
-                    <TiThMenu className=' text-white' size={24} />
+                <button className='inline-block lg:hidden pe-3 pt-3' onClick={openMenu}>
+                    <TiThMenu className=' text-white' size={28} />
                 </button>
                 {/* mobile screen side navbar */}
                 <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-semibold fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
