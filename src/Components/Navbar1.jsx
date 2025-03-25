@@ -180,7 +180,7 @@ const Navbar1 = () => {
 
     return (
         <>
-            <div className='w-full  overflow-x-hidden rounded-full shadow-2xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed top-0 z-50 max-w-full'>
+            <div className='w-full  overflow-x-hidden bg-white-600/50 backdrop-blur-sm rounded-full shadow-2xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed top-0 z-50 max-w-full'>
                 {/* Logo */}
                 <div className='flex'>
                     <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-4 w-32 rounded-full' src={img} alt="Logo" />
