@@ -178,6 +178,7 @@ const Navbar1 = () => {
         setIsMenuOpen(false);
     };
 
+
     return (
         <>
             <div className='w-full  overflow-x-hidden rounded-full md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
@@ -188,7 +189,7 @@ const Navbar1 = () => {
                 {/* Desktop Menu */}
                 <nav className="hidden lg:block mt-4 md:py-3  bg-gray-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
                     <ul id="urlink" className='hidden  lg:flex gap-6 font-medium text-cyan-50'>
-                        <li><a className='hover:text-[#59ffa0]' href='#Home'>Home</a></li>
+                        <li><a className='hover:text-[#59ffa0]  hover-underline ' href='#Home'>Home</a></li>
                         <li><a className='hover:text-[#59ffa0]' href='#Aboutus'>About</a></li>
                         <li><a className='hover:text-[#59ffa0]'  href='#Services'>Services</a></li>
                         <li><a className='hover:text-[#59ffa0]' href='#Skills'>Skills</a></li>
