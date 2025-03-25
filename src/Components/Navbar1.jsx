@@ -180,13 +180,13 @@ const Navbar1 = () => {
 
     return (
         <>
-            <div className='w-full  overflow-x-hidden bg-white-600/50  backdrop-blur-sm rounded-full shadow-2xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed top-1 md:top-0 z-50 max-w-full'>
+            <div className='w-full  overflow-x-hidden rounded-full md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
                 {/* Logo */}
                 <div className='flex'>
                     <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-4 w-32 rounded-full' src={img} alt="Logo" />
                 </div>
                 {/* Desktop Menu */}
-                <nav className="hidden lg:block mt-4 md:py-3  bg-slate-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
+                <nav className="hidden lg:block mt-4 md:py-3  bg-white-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
                     <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
                         <li><a href='#Home'>Home</a></li>
                         <li><a href='#Aboutus'>About</a></li>
@@ -212,8 +212,8 @@ const Navbar1 = () => {
                         </button>
                     </a>
                 </StyledWrapper>
-                <button className='inline-block lg:hidden pe-3 pt-3' onClick={openMenu}>
-                    <TiThMenu className=' text-white' size={28} />
+                <button className='inline-block lg:hidden pe-3' onClick={openMenu}>
+                    <TiThMenu className=' text-white' size={24} />
                 </button>
                 {/* mobile screen side navbar */}
                 <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-semibold fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -226,6 +226,7 @@ const Navbar1 = () => {
                     <li><a href='#Skills'>My Skills</a></li>
                     <li><a href='#Projects'>Projects</a></li>
                     <li><a href='#Contact'>Contact</a></li>
+
                 </ul>
             </div>
         </>
