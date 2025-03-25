@@ -72,12 +72,12 @@ const HeroSection = () => {
                     </div>
 
                     {/* md > screen div1 */}
-                    <div className="absolute left-[-14%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
+                    <div className="absolute left-[-16%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
                         <h1 className=" text-md text-center font-semibold" >Product Designer</h1>
                     </div>
 
                     {/* md> screen div 2 */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-17%] sm:me-15 me-2   top-10  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-19%] sm:me-15 me-2   top-10  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">UI/UX Designer</h3>
 
                     </div>
