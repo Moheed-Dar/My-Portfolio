@@ -220,7 +220,7 @@ const Navbar1 = () => {
                     <div className='absolute right-6 top-6 text-white ' onClick={closeMenu}>
                         <RxCross2 className='font-semibold text-3xl' size={26} />
                     </div>
-                    <li><a href='#home'>Home</a></li>
+                    <li><a href='#Home'>Home</a></li>
                     <li><a href='#Aboutus'>About</a></li>
                     <li><a href='#Services'>Services</a></li>
                     <li><a href='#Skills'>My Skills</a></li>
