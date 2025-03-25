@@ -216,7 +216,7 @@ const Navbar1 = () => {
                     <TiThMenu className=' text-white' size={28} />
                 </button>
                 {/* mobile screen side navbar */}
-                <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-medium fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-medium text-xl fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className='absolute right-6 top-6 text-white ' onClick={closeMenu}>
                         <RxCross2 className='font-semibold text-3xl' size={26} />
                     </div>
