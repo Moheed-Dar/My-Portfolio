@@ -6,9 +6,9 @@ import { motion, useSpring, useScroll } from "framer-motion"; // ✅ Fixed Impor
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import Footer from "./Components/Footer";
-// import About from "./Components/About";
 import Aboutus from "./Components/Aboutus";
 import HeroSection from "./Components/HeroSection";
+
 // import Navbar from "./Components/Navbar";
 
 function ScrollLinked() {
@@ -39,15 +39,13 @@ function ScrollLinked() {
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
-      <ScrollLinked /> 
-      <HeroSection/>
-      <Aboutus/>
-      <Services/>
+      <HeroSection />
+      <Aboutus />
+      <Services />
       <Skills />
       <Projects />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </>
   );
 }

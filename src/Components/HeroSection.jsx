@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import img1 from "../Assets/aboutimg/portfolio1.png";
+// import img1 from "../Assets/aboutimg/portfolio1.png";
 import img from "../Assets/aboutimg/portfolio.png";
 import React from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation";
+
 
 const HeroSection = () => {
     useEffect(() => {
@@ -42,7 +43,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Image + Gradient + Info Boxes */}
-                <div data-aos="fade-right" data-aos-duration="1000" className="relative flex items-center justify-center w-full">
+                <div data-aos="fade-right" data-aos-duration="1000" className="relative  flex items-center justify-center w-full">
                     {/* Left Box (Client Review) */}
                     <div className="absolute left-[-30%] top-15  mt-10 md:block hidden -rotate-15  md:left-10 bg-[#222222c4] p-4 rounded-lg shadow-lg w-45   md:w-56 border border-gray-600">
                         <h3 className="text-md font-semibold">Turning Ideas into Reality</h3>
@@ -53,18 +54,35 @@ const HeroSection = () => {
                             From a blank screen to a fully functional product—let the transformation begin.
                         </p>
                     </div>
-                    {/* Left Box (Client Review) */}
-                    <div className="absolute left-[-6%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
+
+
+                    {/* hire me svg*/}
+                    <div className="absolute w-15 left-58 top-44 h-15 bg-[#a4e4c09c] rounded-full border-2 border-yellow-400 hidden md:flex items-center justify-center animate-pump cursor-pointer">
+                        {/* Rotating Text */}
+                        <svg viewBox="0 0 100 100" className="w-full h-full absolute pointer-events-auto">
+                            <defs>
+                                <path id="circlePath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+                            </defs>
+                            <text className="font-bold text-gray-600" fontSize="13">
+                                <textPath xlinkHref="#circlePath" startOffset="0%"> HIRE ME • HIRE ME • HIRE ME • HIRE ME </textPath>
+                            </text>
+                        </svg>
+                        {/* Center Icon */}
+                        <span className="text-yellow-400 text-lg">✈️</span>
+                    </div>
+
+                    {/* md > screen div1 */}
+                    <div className="absolute left-[-10%] top-50 border sm:ms-15  md:hidden block -rotate-15  bg-[#222222c4] p-4  sm:p-5 rounded-full shadow-lg  border-gray-600 overflow-hidden ">
                         <h1 className=" text-md text-center font-semibold" >Product Designer</h1>
                     </div>
 
-                        {/* Right Box (Expertise) */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-10%] sm:me-15 me-2   top-10  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
+                    {/* md> screen div 2 */}
+                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-14%] sm:me-15 me-2   top-10  block   md:hidden  -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42  border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">UI/UX Designer</h3>
 
                     </div>
 
-                    {/* Right Box (Expertise) */}
+                    {/* Right Box  */}
                     <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-1 lg:me-10 mt-10 top-15  hidden       md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
                         <h3 className="text-md text-center font-semibold">MY EXPERTISE</h3>
                         <div className="mt-2">
@@ -90,7 +108,7 @@ const HeroSection = () => {
 
                         </div>
                     </div>
-                    
+
                 </div>
 
 
@@ -134,9 +152,9 @@ const HeroSection = () => {
                         <a href="https://linkedin.com/in/moheeddar" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin className="text-white text-3xl hover:text-blue-600 transition-colors" />
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                        {/* <a href="https://facebook.com/in/yourusername" target="_blank" rel="noopener noreferrer">
                             <FaFacebook className="text-white text-3xl hover:text-blue-600 transition-colors" />
-                        </a>
+                        </a> */}
                     </div>
                 </div>
 
