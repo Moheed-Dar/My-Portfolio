@@ -181,7 +181,7 @@ const Navbar1 = () => {
 
   return (
     <>
-      <div className='w-full  overflow-x-hidden rounded-full md:mt-2 md:bg-white-600/50 md:backdrop-blur-sm md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
+      <div className='w-full  overflow-x-hidden rounded-full md:mt-2  md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
         {/* Logo */}
         <div className='flex cursor-pointer'>
           <Link to="Home" >
