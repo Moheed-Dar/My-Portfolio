@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../Assets/contactimg/img3.png'
 import Swal from 'sweetalert2'
-
+import { Element } from 'react-scroll';
 const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -56,6 +56,7 @@ const Contact = () => {
   };
 
   return (
+    <Element name="Contact" >
     <section id="Contact" className="  pt-5 md:py-15 mt-6  container mx-auto  md:px-15  px-10 " >
       <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' > <span className="text-white" >Stay</span> In Touch </h2>
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
@@ -141,6 +142,7 @@ const Contact = () => {
       </div>
       <hr className='m-4 text-white md:pt-0.7 pt-0.5 opacity-10 text-1xl glowing-hr ' />
     </section>
+    </Element>
   );
 };
 

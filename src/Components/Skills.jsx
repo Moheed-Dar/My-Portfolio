@@ -3,13 +3,13 @@ import SkillsData from '../Database/SkillsData'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import EditingSkills from './EditingSkills';
-
+import { Element } from 'react-scroll';
 const Skills = () => {
   useEffect(() => {
     AOS.init()
   }, []);
   return (
-    <>
+    <Element name="Skills">
       <section id="Skills" className="pt-12 mt-2 md:mt-4 mx-auto m-4 px-10">
         <div className=" rounded-md p-3 md:p-5">
           <h2 data-aos="zoom-in" className=' p-3 cursor-none  text-center text-2xl md:text-3xl font-bold mb-4  text-[#59ffa0]' > Development<span className='text-white' > Skills</span> </h2>
@@ -35,7 +35,7 @@ const Skills = () => {
         </div>
       </section>
       <EditingSkills />
-    </>
+    </Element>
   )
 }
 export default Skills

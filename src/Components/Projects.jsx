@@ -6,6 +6,8 @@ import Projectdata from '../Database/ProjectData'
 import AOS from 'aos'
 import "aos/dist/aos.css";
 import Skillsbar from './Skillsbar'
+import {  Element } from 'react-scroll';
+
 const Projects = () => {
   useEffect(() => {
     AOS.init()
@@ -47,7 +49,7 @@ const Projects = () => {
     ]
   };
   return (
-    <>
+    <Element name="Projects"  >
     <section id="Projects" className=" py-12  md:py-15 mt-5 container mx-auto  px-8  " >
       {/* this is header */}
       {/* <h1 ddata-aos="zoom-in" className='text-2xl md:text-3xl text-[#59ffa0]  text-center ps-8 font-bold cursor-pointer ' >Projects</h1> */}
@@ -99,7 +101,7 @@ const Projects = () => {
       </Slider>
     </section>
     <Skillsbar/>
-    </>
+    </Element  >
   )
 }
 export default Projects

@@ -6,14 +6,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation";
-
+import {  Element } from 'react-scroll';
 
 const HeroSection = () => {
     useEffect(() => {
         AOS.init()
     })
     return (
-        <>
+        <Element  name="Home" >
             <div id="Home" className="bg-gradient-to-b from-black  via-gray-600 to-green-000 mb-10  px-15  pt-10 md:pt-15 flex flex-col items-center text-white relative overflow-hidden">
                 {/* Heading */}
                 <div data-aos="fade-down"
@@ -149,7 +149,7 @@ const HeroSection = () => {
                 </div>
 
             </div>
-        </>
+        </Element>
     );
 };
 

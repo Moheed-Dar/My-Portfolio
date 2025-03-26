@@ -1,9 +1,10 @@
 import React from 'react'
 import ServicesData from '../Database/ServicesData'
+import { Element } from 'react-scroll';
 const Services = () => {
     return (
-        <>
-            <section id="Services" className=" md:m-8 mt-10  md:py-16 rounded-2xl   bg-[#0A0A0A]" >
+        <Element name="Services">
+            <section id="Services" className=" md:m-8 mt-10  md:py-16 py-5 rounded-2xl   bg-[#0A0A0A]" >
                 <h2 data-aos="zoom-in" className=' p-3  text-center text-2xl md:text-3xl font-bold mb-4 cursor-none  text-[#59ffa0]' >Services</h2>
                 <hr className='m-4 ms-20 me-20 text-white md:pt-0.7 pt-0.5 opacity-30 text-1xl glowing-hr ' />
                 <div className=' grid md:grid-cols-3 grid-cols-1 p-8 text-center ' >
@@ -31,7 +32,7 @@ const Services = () => {
                     ))}
                 </div>
             </section >
-        </>
+        </Element>
     )
 }
 export default Services

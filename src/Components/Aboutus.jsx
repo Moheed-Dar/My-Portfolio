@@ -6,12 +6,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FiDownload } from "react-icons/fi";
 import { FiChevronDown } from "react-icons/fi";
+import { Element } from 'react-scroll';
 const Aboutus = () => {
      useEffect(() => {
         AOS.init()
       })
     return (
-        <section id="Aboutus" className="relative bg-[#0A0A0A] md:m-8 mt-10 rounded-2xl text-white py-16 px-5 flex flex-col items-center">
+        <Element name="Aboutus" >
+        <section id="Aboutus" className="relative bg-[#0A0A0A] md:m-8 mt-10 rounded-2xl text-white  py-16 px-5 flex flex-col items-center">
             <div className="max-w-3xl  text-center md:text-lg   text-sm relative z-20 mix-blend-difference">
                 <h2 data-aos="zoom-in" data-aos-duration="1000" className="text-3xl md:text-4xl md:pb-5 pb-3 font-bold text-[#f5ff9a]">
                     WHO AM I ?
@@ -71,6 +73,7 @@ const Aboutus = () => {
                 />
             </div>
         </section>
+        </ Element >
     );
 };
 

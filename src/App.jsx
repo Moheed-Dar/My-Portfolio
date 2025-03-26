@@ -10,6 +10,7 @@ import Aboutus from "./Components/Aboutus";
 import HeroSection from "./Components/HeroSection";
 import Navbar1 from "./Components/Navbar1";
 
+
 function ScrollLinked() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -37,10 +38,11 @@ function ScrollLinked() {
 }
 function App() {
   return (
+
     <>
-      <ScrollLinked />
+      <ScrollLinked   />
       <Navbar1 />
-      <HeroSection />
+      <HeroSection  />
       <Aboutus />
       <Services />
       <Skills />

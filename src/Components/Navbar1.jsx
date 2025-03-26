@@ -3,12 +3,13 @@ import img from '../Assets/navbarimg/moheed1.png'
 import styled from 'styled-components';
 import { TiThMenu } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
+import { Link } from 'react-scroll';
 
 const StyledWrapper = styled.div`
   button {
     position: relative;
-    width: 10em;
-    height: 3.5em;
+    width: 9em;
+    height: 3.2em;
     outline: none;
     transition: 0.1s;
     background-color: transparent;
@@ -168,70 +169,71 @@ const StyledWrapper = styled.div`
       transform: translateX(-10px);
     }
   }`;
-
 const Navbar1 = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const openMenu = () => {
-        setIsMenuOpen(true);
-    };
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
 
-    return (
-        <>
-            <div className='w-full  overflow-x-hidden rounded-full md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
-                {/* Logo */}
-                <div className='flex'>
-                    <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-4 w-32 rounded-full' src={img} alt="Logo" />
-                </div>
-                {/* Desktop Menu */}
-                <nav className="hidden lg:block mt-4 md:py-3  bg-gray-600/50 backdrop-blur-sm md:px-3 m-3  items-center justify-center rounded-3xl custom-black  gap-6">
-                    <ul id="urlink" className='hidden  lg:flex gap-6 font-medium text-cyan-50'>
-                        <li><a className='hover:text-[#59ffa0]  hover-underline ' href='#Home'>Home</a></li>
-                        <li><a className='hover:text-[#59ffa0]' href='#Aboutus'>About</a></li>
-                        <li><a className='hover:text-[#59ffa0]'  href='#Services'>Services</a></li>
-                        <li><a className='hover:text-[#59ffa0]' href='#Skills'>Skills</a></li>
-                        <li><a className='hover:text-[#59ffa0]' href='#Projects'>Projects</a></li>
-                        <li><a className='hover:text-[#59ffa0]' href='#Contact'>Contact</a></li>
-                    </ul>
-                </nav>
-                {/* navbar button */}
-                <StyledWrapper>
-                    <a href="#Contact">
-                        <button className="lg:block cursor-pointer font-medium hidden"  >
-                            HIRE ME
-                            <div id="clip">
-                                <div id="leftTop" className="corner" />
-                                <div id="rightBottom" className="corner" />
-                                <div id="rightTop" className="corner" />
-                                <div id="leftBottom" className="corner" />
-                            </div>
-                            <span id="rightArrow" className="arrow" />
-                            <span id="leftArrow" className="arrow" />
-                        </button>
-                    </a>
-                </StyledWrapper>
-                <button className='inline-block lg:hidden pe-3 pt-2' onClick={openMenu}>
-                    <TiThMenu className=' text-white' size={28} />
-                </button>
-                {/* mobile screen side navbar */}
-                <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-medium text-xl fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <div className='absolute right-6 top-6 text-white ' onClick={closeMenu}>
-                        <RxCross2 className='font-semibold text-3xl' size={26} />
-                    </div>
-                    <li><a href='#Home'>Home</a></li>
-                    <li><a href='#Aboutus'>About</a></li>
-                    <li><a href='#Services'>Services</a></li>
-                    <li><a href='#Skills'>My Skills</a></li>
-                    <li><a href='#Projects'>Projects</a></li>
-                    <li><a href='#Contact'>Contact</a></li>
+  return (
+    <>
+      <div className='w-full  overflow-x-hidden rounded-full md:mt-2 md:bg-white-600/50 md:backdrop-blur-sm md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
+        {/* Logo */}
+        <div className='flex cursor-pointer'>
+          <Link to="Home" >
+          <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-2 w-32 rounded-full' src={img} alt="Logo" />
+          </Link>
+        </div>
+        {/* Desktop Menu */}
+        <nav className="hidden lg:block mt-4 md:py-3 bg-gray-600/50 backdrop-blur-sm md:px-3 m-3 items-center justify-center rounded-3xl custom-black gap-6 ">
+          <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
+            <li  ><Link className="block  hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Home'>Home</Link></li>
+            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Aboutus'>About</Link></li>
+            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Services'>Services</Link></li>
+            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Skills'>Skills</Link></li>
+            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Projects'>Projects</Link></li>
+            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Contact'>Contact</Link></li>
+          </ul>
+        </nav>
+        {/* navbar button */}
+        <StyledWrapper>
+          <Link to="Contact">
+            <button className="lg:block cursor-pointer font-medium hidden"  >
+              HIRE ME
+              <div id="clip">
+                <div id="leftTop" className="corner" />
+                <div id="rightBottom" className="corner" />
+                <div id="rightTop" className="corner" />
+                <div id="leftBottom" className="corner" />
+              </div>
+              <span id="rightArrow" className="arrow" />
+              <span id="leftArrow" className="arrow" />
+            </button>
+          </Link>
+        </StyledWrapper>
+        <button className='inline-block lg:hidden pe-3 pt-2' onClick={openMenu}>
+          <TiThMenu className=' text-white' size={28} />
+        </button>
+        {/* mobile screen side navbar */}
+        <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-medium text-xl fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className='absolute right-6 top-6 text-white ' onClick={closeMenu}>
+            <RxCross2 className='font-semibold text-3xl' size={26} />
+          </div>
+          <li><a href='#Home'>Home</a></li>
+          <li><a href='#Aboutus'>About</a></li>
+          <li><a href='#Services'>Services</a></li>
+          <li><a href='#Skills'>My Skills</a></li>
+          <li><a href='#Projects'>Projects</a></li>
+          <li><a href='#Contact'>Contact</a></li>
 
-                </ul>
-            </div>
-        </>
-    )
+        </ul>
+      </div>
+    </>
+  )
 }
 
 export default Navbar1
