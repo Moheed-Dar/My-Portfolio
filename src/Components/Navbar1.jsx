@@ -185,7 +185,7 @@ const Navbar1 = () => {
         {/* Logo */}
         <div className='flex cursor-pointer'>
           <Link to="Home" >
-          <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-2 w-32 rounded-full' src={img} alt="Logo" />
+            <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-2 w-32 rounded-full' src={img} alt="Logo" />
           </Link>
         </div>
         {/* Desktop Menu */}
