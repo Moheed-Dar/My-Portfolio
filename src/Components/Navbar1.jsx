@@ -189,7 +189,7 @@ const Navbar1 = () => {
           </Link>
         </div>
         {/* Desktop Menu */}
-        <nav className="hidden lg:block mt-4 md:py-3 bg-gray-600/50 backdrop-blur-sm md:px-3 m-3 items-center justify-center rounded-3xl custom-black gap-6 ">
+        <nav className="hidden lg:block mt-4 md:py-3 bg-white-600/50 backdrop-blur-sm md:px-3 m-3 items-center justify-center rounded-3xl custom-black gap-6 ">
           <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
             <li  ><Link className="block  hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Home'>Home</Link></li>
             <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Aboutus'>About</Link></li>
