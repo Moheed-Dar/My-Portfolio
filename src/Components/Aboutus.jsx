@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import img2 from "../Assets/aboutimg/img2.jpg";
 import img4 from "../Assets/aboutimg/img4.jpg";
 import img5 from "../Assets/aboutimg/img5.jpg";
+import img3 from '../Assets/aboutimg/portfolio3.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FiDownload } from "react-icons/fi";
@@ -51,9 +52,9 @@ const Aboutus = () => {
                 <div className="relative w-full mt-5 flex justify-center">
 
                     <img
-                        src={img2}
+                        src={img3}
                         alt="Floating Image"
-                        className="md:w-47 md:h-59  w-38 h-50 rounded-lg shadow-[20px_20px_50px_rgba(255,255,255,0.3)] md:shadow[0px_0px_40px_rgba(255,255,255,0.3)] transform rotate-6 hover:rotate-0 hover:scale-110 transition duration-300 ease-in-out hover:border-1 hover:border-[#59ffa0] " />
+                        className=" md:h-80  h-60  transform  hover:rotate-0 hover:scale-110 transition duration-300 ease-in-out  " />
                 </div>
 
                 {/* side images */}

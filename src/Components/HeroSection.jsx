@@ -1,19 +1,17 @@
 import { useEffect } from "react";
-// import img1 from "../Assets/aboutimg/portfolio1.png";
-import img from "../Assets/aboutimg/portfolio.png";
-import React from "react";
+import img from "../Assets/aboutimg/portfolio4.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation";
-import {  Element } from 'react-scroll';
+import { Element } from 'react-scroll';
 
 const HeroSection = () => {
     useEffect(() => {
         AOS.init()
     })
     return (
-        <Element  name="Home" >
+        <Element name="Home" >
             <div id="Home" className="bg-gradient-to-b from-black  via-gray-600 to-green-000 mb-10  px-15  pt-10 md:pt-15 flex flex-col items-center text-white relative overflow-hidden">
                 {/* Heading */}
                 <div data-aos="fade-down"
@@ -113,7 +111,7 @@ const HeroSection = () => {
                         data-aos-duration="1000"
                         src={img}
                         alt="Moheed Dar"
-                        className="relative w-48 md:w-56 rounded-bl-full rounded-br-full object-cover z-10"
+                        className="relative w-70 md:w-80   rounded-bl-full rounded-br-full object-cover z-10"
                     />
                 </div>
                 {/* Button & Social Icons */}
