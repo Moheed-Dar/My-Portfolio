@@ -93,21 +93,7 @@ const Contact = () => {
                 placeholder="Enter your Email Address "
               />
             </div>
-            {/* Email input
-            <div className='md:ms-6 ms-1 mt-2 md:p-2 p-1 md:me-5 me-1' >
-              <label className="md:text-xl text-sm pb-3  cursor-pointer font-semibold text-white" htmlFor="number">
-                Phone Number :
-              </label>
-              <br />
-              <input
-                className="appearance-none border-none text-[#FFFDD0] text-sm md:text-lg placeholder-gray-600 font-medium rounded-md bg-[#171717] outline-none w-full md:w-full md:mt-2 mt-1 md:p-3  p-2 caret-red-500"
-                type="number"
-                id="number"
-                name="number"
-                placeholder="Enter your Email Address "
-              />
-            </div> */}
-            {/* message input */}
+           
             <div className='md:ms-6 ms-1 mt-2 md:p-2 p-1 md:me-5 me-1' >
               <label className="md:text-xl text-sm pb-3  cursor-pointer font-semibold text-white" htmlFor="textarea">
                 Message :
@@ -126,11 +112,6 @@ const Contact = () => {
                 <span className="bg-green-400 shadow-green-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
                 Submit
               </button>
-
-              {/* <button class="bg-green-950 text-green-400 border border-green-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-                <span class="bg-green-400 shadow-green-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-                Hover Me
-              </button> */}
 
             </div>
           </form>

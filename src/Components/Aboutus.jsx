@@ -21,7 +21,7 @@ const Aboutus = () => {
                     </h2>
                     <div data-aos="zoom-in" data-aos-duration="1000" className="md:m-0 mx-7" >
                         <p className="text-gray-300 mt-4 leading-relaxed">
-                            I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
+                            I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >Next.js, React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP & Fmotion</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
                         </p>
                         <p className="text-gray-400 mt-4">
                             Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <span className="text-green-400 font-semibold" >projects</span>, which is why I am constantly working to enhance my <span className="text-white font-semibold" >Skills</span>.
@@ -32,10 +32,10 @@ const Aboutus = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         {/* Button */}
-                        <a href="https://drive.google.com/file/d/1kfD9TOKL3liliI6jhCMo9tHcnsGGbwvr/view?usp=drivesdk " target='_blank' >
+                        <a href="https://drive.google.com/file/d/1jAmEVzdPl1tiERtgb5vS1I-ak2HkA-Ck/view?usp=drive_link " target='_blank' >
                             <button
                                 id="movingGradientButton"
-                                className="mt-6 md:px-4 md:py-2 px-5 py-2 text-black font-semibold rounded-full shadow-lg overflow-hidden relative transition-transform duration-300 hover:scale-105 flex items-center gap-2"
+                                className="mt-6 md:px-4 md:py-2  cursor-pointer px-5 py-2 text-black font-semibold rounded-full shadow-lg overflow-hidden relative transition-transform duration-300 hover:scale-105 flex items-center gap-2"
                             >
                                 <span className="relative z-10">Download CV</span>
                                 <FiDownload className="text-lg animate-bounce" />
