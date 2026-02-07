@@ -178,7 +178,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className='text-2xl md:text-3xl font-bold text-white'>Send Message</h3>
-                      <p className="text-gray-500 text-sm">I'll respond within 24 hours</p>
+                      <p className="text-gray-500 text-sm">I'll respond within 2 hours</p>
                     </div>
                   </div>
 
