@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import img2 from "../Assets/aboutimg/img2.jpg";
 import img4 from "../Assets/aboutimg/img4.jpg";
 import img5 from "../Assets/aboutimg/img5.jpg";
-import img3 from '../Assets/aboutimg/portfolio3.png'
+import img3 from '../Assets/aboutimg/img11.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FiDownload } from "react-icons/fi";
@@ -21,7 +20,7 @@ const Aboutus = () => {
                     </h2>
                     <div data-aos="zoom-in" data-aos-duration="1000" className="md:m-0 mx-7" >
                         <p className="text-gray-300 mt-4 leading-relaxed">
-                            I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >Next.js, React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP & Fmotion</span> </b>. I enjoy crafting engaging and scalable <span className="text-white font-semibold" >Web Applications</span>.
+                            I am a Full-Stack Engineer 🖱️ specialized in <b className="text-white " >Next.js, React.js, Tailwind CSS, TypeScript, Node.js, MongoDB, and <span className="text-green-400" >GSAP & Fmotion</span> </b>. I enjoy crafting engaging and scalable, Fast and Dynamic <span className="text-white font-semibold" >Web Applications</span>.
                         </p>
                         <p className="text-gray-400 mt-4">
                             Programming is my <span className="text-white font-semibold" >passion</span>, These days, my focus is on expanding my portfolio by building more <span className="text-green-400 font-semibold" >projects</span>, which is why I am constantly working to enhance my <span className="text-white font-semibold" >Skills</span>.

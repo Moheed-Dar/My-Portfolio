@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import img from "../Assets/aboutimg/portfolio4.png";
+import img from "../Assets/aboutimg/img12.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
@@ -25,6 +25,8 @@ const HeroSection = () => {
                             "Full Stack",
                             2000,
                             "MERN Stack",
+                            2000,
+                            "Next.js",
                             2000,
                             "Javascript+Typescript",
                             3000,
