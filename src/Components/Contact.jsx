@@ -253,7 +253,7 @@ const Contact = () => {
                     <button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-[#59ffa0] to-[#00d4ff] text-black font-bold py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(89,255,160,0.5)] hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full group/btn cursor-pointer relative overflow-hidden bg-gradient-to-r from-[#59ffa0] to-[#00d4ff] text-black font-bold py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(89,255,160,0.5)] hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         {isSubmitting ? (
@@ -273,7 +273,7 @@ const Contact = () => {
                   </form>
 
                   {/* Social Links */}
-                  <div className="mt-8 pt-6 border-t border-white/10">
+                  {/* <div className="mt-8 pt-6 border-t border-white/10">
                     <p className="text-gray-500 text-sm text-center mb-4">Or connect via social media</p>
                     <div className="flex justify-center gap-4">
                       {socialLinks.map((social, index) => (
@@ -287,7 +287,7 @@ const Contact = () => {
                         </a>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -310,7 +310,7 @@ const Contact = () => {
                   />
                   
                   {/* Floating Badge */}
-                  <div className="absolute -top-4 -right-4 bg-[#171717] border border-[#59ffa0]/30 rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] animate-bounce-slow">
+                  <div className="absolute -top-4 -right-4  bg-[#171717] border border-[#59ffa0]/30 rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] animate-bounce-slow">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-[#59ffa0] animate-pulse"></div>
                       <span className="text-white text-sm font-semibold">Available for work</span>
@@ -338,7 +338,7 @@ const Contact = () => {
                   </div>
                   <h4 className="text-white font-bold mb-1">Location</h4>
                   <p className="text-gray-400 text-sm">Islamabad, Pakistan</p>
-                  <span className="inline-flex items-center gap-1 text-[#59ffa0] text-xs mt-2">
+                  <span className="inline-flex cursor-pointer items-center gap-1 text-[#59ffa0] text-xs mt-2">
                     Remote available <ArrowUpRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -366,7 +366,7 @@ const Contact = () => {
         </div>
 
         {/* Bottom Gradient Line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#59ffa0] to-transparent opacity-50"></div>
+        <div className="absolute bottom-0 cursor-pointer left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#59ffa0] to-transparent opacity-50"></div>
       </section>
 
       {/* Advanced CSS Animations */}
