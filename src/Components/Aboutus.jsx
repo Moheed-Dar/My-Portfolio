@@ -31,7 +31,7 @@ const Aboutus = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         {/* Button */}
-                        <a href="https://drive.google.com/file/d/1jAmEVzdPl1tiERtgb5vS1I-ak2HkA-Ck/view?usp=drive_link " target='_blank' >
+                        <a href="https://drive.google.com/file/d/1P8oAeXif1xnBHouw5YtGVGMKI5jaILmq/view?usp=drivesdk " target='_blank' >
                             <button
                                 id="movingGradientButton"
                                 className="mt-6 md:px-4 md:py-2  cursor-pointer px-5 py-2 text-black font-semibold rounded-full shadow-lg overflow-hidden relative transition-transform duration-300 hover:scale-105 flex items-center gap-2"
