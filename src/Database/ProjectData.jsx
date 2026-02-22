@@ -34,7 +34,7 @@ const Projectdata = [
         name: "Go Room",
         technology: "ReactJs, Bootstrap, APIs",
         details: "A weather forecasting app that provides real-time updates, including temperature, humidity, and wind speed, using OpenWeather API.",
-        state: "Deployed",
+        state: "Live",
         link: "https://go-room.vercel.app",
         git: gitimg,
         // gitlink: "https://github.com/Moheed-Dar/React-Project-3-Weather-App/tree/main/Weather-app",
