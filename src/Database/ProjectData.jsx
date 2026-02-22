@@ -1,6 +1,5 @@
 import React from 'react'
 import img1 from '../Assets/Projectimg/goroom.png'
-// import img2 from '../Assets/Projectimg/food recipe web.avif'
 import img3 from '../Assets/Projectimg/hospital.png'
 import img4 from '../Assets/Projectimg/social media app.jpeg'
 import img5 from '../Assets/Projectimg/badder.png'
@@ -10,9 +9,7 @@ import img7 from '../Assets/Projectimg/vctech.png'
 import img8 from '../Assets/Projectimg/color generator.webp'
 import img12 from '../Assets/Projectimg/construction branding blog.jpg'
 import img13 from '../Assets/Projectimg/food recipe web.avif'
-import gitimg from '../Assets/Projectimg/github.png'
-// import img9 from '../Assets/Projectimg/construction branding blog.jpg'
-import img10 from '../Assets/Projectimg/home designer.avif'
+import gitimg from '../Assets/Projectimg/E-Dashboad.avif'
 const Projectdata = [
     {
         image: img5,
@@ -99,7 +96,7 @@ const Projectdata = [
         // gitlink: " ",
     },
     {
-        image: img3,
+        image: gitimg,
         name: "E-Dashboard Web App",
         technology: "ReactJs, TailwindCSS, ExpressJs, Firebase, JWT",
         details: "A web-based dashboard for real-time analytics, data visualization, and user role management, helping businesses monitor key metrics efficiently.",
