@@ -6,23 +6,32 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Element } from 'react-scroll';
 
+/* ================= Additional Skills Images ================= */
+import cImg from "../Assets/additionalskills/c.png";
+import dotnetImg from "../Assets/additionalskills/dotnet.png";
+import socialImg from "../Assets/additionalskills/social.png";
+import vsImg from "../Assets/additionalskills/vs.png";
+import mysqlImg from "../Assets/additionalskills/MySQL.png";
+import postgresImg from "../Assets/additionalskills/PostgresSQL.png";
+import postmanImg from "../Assets/additionalskills/Postman.png";
+import actionImg from "../Assets/additionalskills/action.png";
+import dockerImg from "../Assets/additionalskills/Docker.png";
+import figmaImg from "../Assets/additionalskills/Figma.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
-/* ================= Additional Skills Data (.NET family + Creative tools) ================= */
+/* ================= Additional Skills Data ================= */
 const additionalSkills = [
-  /* .NET / Development side */
-  { id: 1, name: "C#", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
-  { id: 2, name: ".NET", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" },
-  { id: 3, name: ".NET Core", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
-  { id: 4, name: "Visual Studio", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg" },
-
-  /* Creative / Editing side */
-  { id: 5, name: "Photoshop", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-photoshop-icon.png" },
-  { id: 6, name: "Premiere Pro", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-premiere-pro-icon.png" },
-  { id: 7, name: "After Effects", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-after-effects-icon.png" },
-  { id: 8, name: "Lightroom", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/adobe-lightroom-icon.png" },
-  { id: 9, name: "CapCut", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.png" },
-  { id: 10, name: "Figma", img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/figma-icon.png" },
+  { id: 1,  name: "C#",             img: cImg },
+  { id: 2,  name: ".NET",           img: socialImg },
+  { id: 3,  name: ".NET Core",      img: dotnetImg },
+  { id: 4,  name: "Visual Studio",  img: vsImg },
+  { id: 5,  name: "MySQL",          img: mysqlImg },
+  { id: 6,  name: "PostgresSQL",    img: postgresImg },
+  { id: 7,  name: "Postman",        img: postmanImg },
+  { id: 8,  name: "GitHub Actions", img: actionImg },
+  { id: 9,  name: "Docker",         img: dockerImg },
+  { id: 10, name: "Figma",          img: figmaImg },
 ];
 
 const Skills = () => {
@@ -31,28 +40,47 @@ const Skills = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
 
-    /* GSAP — sirf Additional Skills section ke liye */
     const ctx = gsap.context(() => {
-      // Heading rise
-      gsap.from(".add-heading", {
-        y: 60, opacity: 0, duration: 1, ease: "power3.out",
-        scrollTrigger: { trigger: additionalRef.current, start: "top 80%" },
-      });
 
-      // Cards — stagger bounce
-      gsap.from(".add-card", {
-        y: 70, opacity: 0, scale: 0.6,
-        duration: 0.8, ease: "back.out(1.7)",
-        stagger: 0.07,
-        scrollTrigger: { trigger: ".add-grid", start: "top 85%" },
-      });
+      /* 1) Heading — rise */
+      gsap.fromTo(".add-heading",
+        { y: 60, opacity: 0 },
+        {
+          y: 0, opacity: 1,
+          duration: 1, ease: "power3.out",
+          clearProps: "all",
+          scrollTrigger: { trigger: additionalRef.current, start: "top 80%", once: true },
+        }
+      );
 
-      // Infinite float — half upar, half neeche
-      gsap.to(".float-a", { y: -10, duration: 2.2, ease: "sine.inOut", yoyo: true, repeat: -1 });
-      gsap.to(".float-b", { y: 10, duration: 2.6, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
+      /* 2) Cards — entrance (sirf OUTER wrapper pe, hover styles inner pe hain) */
+      gsap.fromTo(".add-card",
+        { y: 70, opacity: 0, scale: 0.85 },
+        {
+          y: 0, opacity: 1, scale: 1,
+          duration: 0.8, ease: "back.out(1.4)",
+          stagger: 0.06,
+          clearProps: "all", // hover effects wapas enable
+          scrollTrigger: { trigger: ".add-grid", start: "top 88%", once: true },
+        }
+      );
+
+      /* 3) Float — sirf ICON wrapper pe (card se koi conflict nahi) */
+      gsap.to(".float-a", { y: -8, duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.2 });
+      gsap.to(".float-b", { y: 8,  duration: 2.8, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.6 });
+
     }, additionalRef);
 
-    return () => ctx.revert(); // cleanup — StrictMode safe
+    /* Images load hone ke baad ScrollTrigger ki positions refresh karo */
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("load", refresh);
+    const t = setTimeout(refresh, 800);
+
+    return () => {
+      window.removeEventListener("load", refresh);
+      clearTimeout(t);
+      ctx.revert(); // cleanup — StrictMode safe
+    };
   }, []);
 
   return (
@@ -181,27 +209,31 @@ const Skills = () => {
           {/* Additional Skills Grid */}
           <div className="add-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5 md:gap-6 w-full max-w-4xl mt-14">
             {additionalSkills.map((item, index) => (
-              <div
-                key={item.id}
-                className={`add-card ${index % 2 === 0 ? "float-a" : "float-b"} group relative flex flex-col items-center gap-3 p-5 rounded-2xl bg-[#151111] border border-[#D62839]/25 hover:border-[#D62839]/70 hover:bg-[#1C1414] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_15px_40px_rgba(214,40,57,0.3)] cursor-pointer`}
-              >
-                {/* Icon */}
-                <div className="relative">
-                  <div className="absolute inset-0 bg-[#D62839]/30 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#0D0B0B] border border-[#D62839]/30 flex items-center justify-center group-hover:border-[#D62839]/60 transition-all duration-500 group-hover:scale-110">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-8 h-8 sm:w-9 sm:h-9 object-contain group-hover:scale-125 group-hover:rotate-6 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+              /* OUTER wrapper — sirf GSAP entrance ke liye (NO transition classes) */
+              <div key={item.id} className="add-card">
+                {/* INNER card — saare hover styles yahan */}
+                <div className="group relative h-full flex flex-col items-center gap-3 p-5 rounded-2xl bg-[#151111] border border-[#D62839]/25 hover:border-[#D62839]/70 hover:bg-[#1C1414] transition-colors duration-500 hover:-translate-y-1.5 hover:shadow-[0_15px_40px_rgba(214,40,57,0.3)] cursor-pointer">
 
-                {/* Name */}
-                <span className="text-xs sm:text-sm font-medium text-[#F5F3EF]/60 group-hover:text-[#FF6B7A] transition-colors duration-300 text-center leading-tight">
-                  {item.name}
-                </span>
+                  {/* Icon — float wrapper (GSAP sirf yahan transform karta hai) */}
+                  <div className={`${index % 2 === 0 ? "float-a" : "float-b"} relative will-change-transform`}>
+                    {/* Glow */}
+                    <div className="absolute inset-0 bg-[#D62839]/30 rounded-xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Icon box */}
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#0D0B0B] border border-[#D62839]/30 flex items-center justify-center group-hover:border-[#D62839]/60 transition-colors duration-500 group-hover:scale-110">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="w-8 h-8 sm:w-9 sm:h-9 object-contain group-hover:scale-125 group-hover:rotate-6 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name */}
+                  <span className="text-xs sm:text-sm font-medium text-[#F5F3EF]/60 group-hover:text-[#FF6B7A] transition-colors duration-300 text-center leading-tight">
+                    {item.name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

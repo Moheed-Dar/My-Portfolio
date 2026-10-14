@@ -10,7 +10,7 @@ import {
   FaArrowRight, FaDownload, FaMapMarkerAlt, FaEnvelopeOpenText,
   FaBriefcase, FaProjectDiagram,
   FaReact, FaNodeJs, FaJs, FaDatabase, FaGitAlt,
-  FaHtml5, FaCss3Alt, FaSass, FaDocker,
+  FaHtml5, FaCss3Alt, FaSass, FaDocker, FaMicrosoft,
 } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { Element } from "react-scroll";
@@ -25,6 +25,7 @@ const socials = [
 const techStack = [
   { icon: FaReact, name: "React.js" },
   { icon: FaNodeJs, name: "Node.js" },
+  { icon: FaMicrosoft, name: ".NET" },
   { icon: FaJs, name: "JavaScript" },
   { icon: FaDatabase, name: "MongoDB" },
   { icon: FaGitAlt, name: "Git" },
@@ -137,7 +138,7 @@ const HeroSection = () => {
               Moheed <span className="text-blood-gradient">Dar</span>
             </h1>
 
-            {/* Typewriter */}
+            {/* Typewriter — .NET roles bhi included */}
             <div data-aos="fade-up" data-aos-delay="200" className="mt-4">
               <TypeAnimation
                 className="text-lg md:text-xl font-medium text-[#FF6B7A]"
@@ -145,10 +146,11 @@ const HeroSection = () => {
                   "Full Stack Developer", 2000,
                   "MERN Stack Developer", 2000,
                   "Next.js Developer", 2000,
-                  "UI/UX Enthusiast", 2000,
+                  ".NET Developer", 2000,
+                  "ASP.NET Core & C#", 2000
                 ]}
                 wrapper="span"
-                speed={40}
+                speed={80}
                 repeat={Infinity}
                 cursor={true}
               />
@@ -284,6 +286,14 @@ const HeroSection = () => {
               {/* Floating chip — React (top-left) */}
               <div className="absolute -left-3 sm:-left-7 top-16 z-20 flex items-center gap-2 bg-[#151111]/90 backdrop-blur border border-[#D62839]/40 rounded-full px-4 py-2 text-sm shadow-lg animate-float">
                 <FaReact className="text-[#FF6B7A]" /> React.js
+              </div>
+
+              {/* Floating chip — .NET (bottom-left) ✨ NEW */}
+              <div
+                className="absolute -left-3 sm:-left-7 bottom-16 z-20 flex items-center gap-2 bg-[#151111]/90 backdrop-blur border border-[#D62839]/40 rounded-full px-4 py-2 text-sm shadow-lg animate-float"
+                style={{ animationDelay: "3s" }}
+              >
+                <FaMicrosoft className="text-[#FF6B7A]" /> .NET
               </div>
 
               {/* Floating chip — Node (bottom-right) */}
