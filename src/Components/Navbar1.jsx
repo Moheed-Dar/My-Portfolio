@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
-import img from '../Assets/navbarimg/moheed1.png'
+import React, { useState } from 'react';
+import img from '../Assets/navbarimg/moheed1.png';
 import styled from 'styled-components';
 import { TiThMenu } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-scroll';
 
+/* ---------- Nav links data ---------- */
+const navLinks = [
+  { name: 'Home', to: 'Home' },
+  { name: 'About', to: 'Aboutus' },
+  { name: 'Services', to: 'Services' },
+  { name: 'Skills', to: 'Skills' },
+  { name: 'Projects', to: 'Projects' },
+  { name: 'Contact', to: 'Contact' },
+];
+
+/* ---------- HIRE ME button (red theme) ---------- */
 const StyledWrapper = styled.div`
   button {
     position: relative;
@@ -16,25 +27,25 @@ const StyledWrapper = styled.div`
     border: none;
     font-size: 13px;
     font-weight: bold;
-    color: #ddebf0;
+    color: #F5F3EF;
   }
 
   #clip {
-    --color: ;
+    --color: #D62839;
     position: absolute;
     top: 0;
     overflow: hidden;
     width: 100%;
     height: 100%;
     border: 5px double var(--color);
-    box-shadow: inset 0px 0px 15px ;
+    box-shadow: inset 0px 0px 15px rgba(214, 40, 57, 0.4);
     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
   }
 
   .arrow {
     position: absolute;
     transition: 0.2s;
-    background-color: #2761c3;
+    background-color: #D62839;
     top: 35%;
     width: 11%;
     height: 30%;
@@ -51,13 +62,13 @@ const StyledWrapper = styled.div`
   }
 
   button:hover #rightArrow {
-    background-color: #27c39f;
+    background-color: #FF6B7A;
     left: -15%;
     animation: 0.6s ease-in-out both infinite alternate rightArrow8;
   }
 
   button:hover #leftArrow {
-    background-color: #27c39f;
+    background-color: #FF6B7A;
     left: 103%;
     animation: 0.6s ease-in-out both infinite alternate leftArrow8;
   }
@@ -66,47 +77,27 @@ const StyledWrapper = styled.div`
     position: absolute;
     width: 4em;
     height: 4em;
-    background-color: ;
-    box-shadow: inset 1px 1px 8px #;
     transform: scale(1) rotate(45deg);
     transition: 0.2s;
   }
 
-  #rightTop {
-    top: -1.98em;
-    left: 91%;
-  }
-
-  #leftTop {
-    top: -1.96em;
-    left: -3.0em;
-  }
-
-  #leftBottom {
-    top: 2.10em;
-    left: -2.15em;
-  }
-
-  #rightBottom {
-    top: 45%;
-    left: 88%;
-  }
+  #rightTop { top: -1.98em; left: 91%; }
+  #leftTop { top: -1.96em; left: -3.0em; }
+  #leftBottom { top: 2.10em; left: -2.15em; }
+  #rightBottom { top: 45%; left: 88%; }
 
   button:hover #leftTop {
     animation: 0.1s ease-in-out 0.05s both changeColor8,
     0.2s linear 0.4s both lightEffect8;
   }
-
   button:hover #rightTop {
     animation: 0.1s ease-in-out 0.15s both changeColor8,
     0.2s linear 0.4s both lightEffect8;
   }
-
   button:hover #rightBottom {
     animation: 0.1s ease-in-out 0.25s both changeColor8,
     0.2s linear 0.4s both lightEffect8;
   }
-
   button:hover #leftBottom {
     animation: 0.1s ease-in-out 0.35s both changeColor8,
     0.2s linear 0.4s both lightEffect8;
@@ -117,123 +108,159 @@ const StyledWrapper = styled.div`
   }
 
   button:hover #clip {
-    animation: 0.2s ease-in-out 0.55s both greenLight8;
-    --color: #27c39f;
+    animation: 0.2s ease-in-out 0.55s both redLight8;
+    --color: #FF6B7A;
   }
 
   @keyframes changeColor8 {
-    from {
-      background-color: #2781c3;
-    }
-
-    to {
-      background-color: #27c39f;
-    }
+    from { background-color: #D62839; }
+    to { background-color: #FF6B7A; }
   }
 
   @keyframes lightEffect8 {
-    from {
-      box-shadow: 1px 1px 5px #27c39f;
-    }
-
-    to {
-      box-shadow: 0 0 2px #27c39f;
-    }
+    from { box-shadow: 1px 1px 5px #FF6B7A; }
+    to { box-shadow: 0 0 2px #FF6B7A; }
   }
 
-  @keyframes greenLight8 {
-    from {
-    }
-
-    to {
-      box-shadow: inset 0px 0px 32px #27c39f;
-    }
+  @keyframes redLight8 {
+    to { box-shadow: inset 0px 0px 32px #FF6B7A; }
   }
 
   @keyframes leftArrow8 {
-    from {
-      transform: translate(0px);
-    }
-
-    to {
-      transform: translateX(10px);
-    }
+    from { transform: translate(0px); }
+    to { transform: translateX(10px); }
   }
 
   @keyframes rightArrow8 {
-    from {
-      transform: translate(0px);
-    }
+    from { transform: translate(0px); }
+    to { transform: translateX(-10px); }
+  }
+`;
 
-    to {
-      transform: translateX(-10px);
-    }
-  }`;
 const Navbar1 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const openMenu = () => {
-    setIsMenuOpen(true);
-  };
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <>
-      <div className='w-full  overflow-x-hidden rounded-full md:mt-2  md:shadow-2xl shadow-xl flex items-center  justify-between lg:justify-around  md:px-8 sm:px-4 fixed md:top-0 top-1 z-50 max-w-full'>
-        {/* Logo */}
-        <div className='flex cursor-pointer'>
-          <Link to="Home" >
-            <img className='md:py-3 sm:py-3 ps-2 mt-2 md:mt-2 w-32 rounded-full' src={img} alt="Logo" />
-          </Link>
-        </div>
-        {/* Desktop Menu */}
-        <nav className="hidden lg:block mt-4 md:py-3 bg-white-600/50 backdrop-blur-sm md:px-3 m-3 items-center justify-center rounded-3xl custom-black gap-6 ">
-          <ul id="urlink" className='hidden lg:flex gap-6 font-medium text-cyan-50'>
-            <li  ><Link className="block  hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Home'>Home</Link></li>
-            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Aboutus'>About</Link></li>
-            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Services'>Services</Link></li>
-            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Skills'>Skills</Link></li>
-            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Projects'>Projects</Link></li>
-            <li><Link className="block hover:text-[#59ffa0] " offset={-20} spy={true} smooth={true} duration={500} to='Contact'>Contact</Link></li>
-          </ul>
-        </nav>
-        {/* navbar button */}
-        <StyledWrapper>
-          <Link to="Contact">
-            <button className="lg:block cursor-pointer font-medium hidden"  >
-              HIRE ME
-              <div id="clip">
-                <div id="leftTop" className="corner" />
-                <div id="rightBottom" className="corner" />
-                <div id="rightTop" className="corner" />
-                <div id="leftBottom" className="corner" />
-              </div>
-              <span id="rightArrow" className="arrow" />
-              <span id="leftArrow" className="arrow" />
-            </button>
-          </Link>
-        </StyledWrapper>
-        <button className='inline-block lg:hidden pe-3 pt-2' onClick={openMenu}>
-          <TiThMenu className=' text-white' size={28} />
-        </button>
-        {/* mobile screen side navbar */}
-        <ul id='sideMenu' className={`flex lg:hidden flex-col gap-4 py-20 px-10 rounded-lg  text-white  bg-white-600/50 backdrop-blur-md font-medium text-xl fixed top-0 bottom-0 right-0 w-55   z-50 transition-transform duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className='absolute right-6 top-6 text-white ' onClick={closeMenu}>
-            <RxCross2 className='font-semibold text-3xl' size={26} />
+      <div className="w-full fixed top-0 z-50 bg-[#0D0B0B]/85 backdrop-blur-lg border-b border-[#D62839]/25">
+        <div className="max-w-7xl mx-auto flex items-center justify-between lg:justify-around px-4 sm:px-6 md:px-8 h-16 md:h-20">
+
+          {/* Logo */}
+          <div className="flex items-center cursor-pointer shrink-0">
+            <Link to="Home" smooth={true} duration={500}>
+              <img
+                className="w-28 md:w-32 object-contain"
+                src={img}
+                alt="Moheed Dar Logo"
+              />
+            </Link>
           </div>
-          <li><a href='#Home'>Home</a></li>
-          <li><a href='#Aboutus'>About</a></li>
-          <li><a href='#Services'>Services</a></li>
-          <li><a href='#Skills'>My Skills</a></li>
-          <li><a href='#Projects'>Projects</a></li>
-          <li><a href='#Contact'>Contact</a></li>
 
-        </ul>
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center gap-7 font-display text-sm tracking-wide">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                activeClass="text-[#FF6B7A]"
+                className="text-[#F5F3EF]/70 hover:text-[#FF6B7A] transition-colors duration-300 cursor-pointer relative group"
+              >
+                {link.name}
+                {/* Hover underline */}
+                <span className="absolute -bottom-1.5 left-0 w-0 h-px bg-[#D62839] group-hover:w-full transition-all duration-300" />
+              </Link>
+            ))}
+          </nav>
+
+          {/* HIRE ME button (desktop) */}
+          <div className="hidden lg:block shrink-0">
+            <StyledWrapper>
+              <Link to="Contact" smooth={true} duration={500}>
+                <button className="cursor-pointer font-medium">
+                  HIRE ME
+                  <div id="clip">
+                    <div id="leftTop" className="corner" />
+                    <div id="rightBottom" className="corner" />
+                    <div id="rightTop" className="corner" />
+                    <div id="leftBottom" className="corner" />
+                  </div>
+                  <span id="rightArrow" className="arrow" />
+                  <span id="leftArrow" className="arrow" />
+                </button>
+              </Link>
+            </StyledWrapper>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="lg:hidden p-2 text-[#F5F3EF] hover:text-[#FF6B7A] transition-colors"
+            onClick={openMenu}
+            aria-label="Open menu"
+          >
+            <TiThMenu size={26} />
+          </button>
+        </div>
       </div>
-    </>
-  )
-}
 
-export default Navbar1
+      {/* ===== Mobile side menu ===== */}
+      <div
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] lg:hidden transition-opacity duration-500 ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={closeMenu}
+      />
+
+      <ul
+        className={`lg:hidden flex flex-col gap-1 py-16 px-8 text-[#F5F3EF] font-body font-medium text-lg fixed top-0 bottom-0 right-0 w-64 z-[70] bg-[#151111] border-l border-[#D62839]/30 transition-transform duration-500 ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <button
+          className="absolute right-5 top-5 text-[#F5F3EF]/70 hover:text-[#FF6B7A] transition-colors"
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          <RxCross2 size={26} />
+        </button>
+
+        {navLinks.map((link) => (
+          <li key={link.to} className="border-b border-white/5 last:border-0">
+            <Link
+              to={link.to}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              activeClass="text-[#FF6B7A]"
+              onClick={closeMenu}
+              className="block py-3.5 hover:text-[#FF6B7A] hover:pl-2 transition-all duration-300 cursor-pointer"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+
+        {/* Mobile HIRE ME */}
+        <li className="mt-6">
+          <Link
+            to="Contact"
+            smooth={true}
+            duration={500}
+            onClick={closeMenu}
+            className="block text-center bg-[#D62839] text-[#F5F3EF] font-semibold py-3 rounded-full hover:bg-[#FF6B7A] hover:text-[#0D0B0B] transition-all duration-300 cursor-pointer"
+          >
+            HIRE ME
+          </Link>
+        </li>
+      </ul>
+    </>
+  );
+};
+
+export default Navbar1;

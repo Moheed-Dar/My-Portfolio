@@ -1,189 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+/* ============================================================
+   GLOBAL STYLES — Portfolio Red Theme (#D62839)
+   ============================================================ */
 
- /* #Logo{
-      filter:saturate(2);
-      filter:hue-rotate(100deg)
-  } */
+/* ---------- Fonts (ek dafa globally — sab components use karenge) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
 
-  /* these are borders in  porjects component*/
-  /* Projects Styling Start */
- ::-webkit-scrollbar{
-  width: 10px;
- }
- 
-::-webkit-scrollbar-thumb{
-  background-color: rgba(255, 255, 0, 0.699);
-  border-radius: 10px;
-  border:2px solid transparent;
-  background-clip: content-box;
+/* ---------- Theme Variables ---------- */
+:root {
+  --red: #D62839;
+  --red-soft: #FF6B7A;
+  --bg: #0D0B0B;
+  --card: #151111;
+  --text: #F5F3EF;
 }
-@media (max-width: 1024px) {  /* lg size se neeche (md aur sm) hide */
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- Font utility classes (globally available) ---------- */
+.font-display { font-family: 'Syne', sans-serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+.font-logo { font-family: 'Playfair Display', serif; }
+
+/* ---------- Blood gradient text (globally available) ---------- */
+.text-blood-gradient {
+  background: linear-gradient(115deg, #F5F3EF 0%, #FF6B7A 45%, #D62839 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px rgba(214, 40, 57, 0.35));
+}
+
+/* ---------- Text selection ---------- */
+::selection {
+  background: var(--red);
+  color: var(--text);
+}
+
+/* ============================================================
+   SCROLLBAR — red theme
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(214, 40, 57, 0.7);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 107, 122, 0.9);
+}
+
+@media (max-width: 1024px) {
   ::-webkit-scrollbar {
     display: none;
   }
 }
- @keyframes borderRotate {
-  0% {
-    border-color: rgba(255, 0, 0, 0.8);
-  } /* Red */
-  25% {
-    border-color: rgba(0, 255, 0, 0.8);
-  } /* Green */
-  50% {
-    border-color: rgba(0, 0, 255, 0.8);
-  } /* Blue */
-  75% {
-    border-color: rgba(255, 255, 0, 0.8);
-  } /* Yellow */
-  100% {
-    border-color: rgba(255, 0, 0, 0.8);
-  } /* Back to Red */
+
+/* ============================================================
+   SLICK CAROUSEL (Projects) — red theme
+   ============================================================ */
+
+/* Default bullet hatao — customPaging wale pills dikhne do */
+.slick-dots li button:before {
+  content: none !important;
 }
-.animate-border {
-  border-width: 1px;
-  border-style: dashed;
-  animation: borderRotate 3s infinite linear;
+
+/* Dots ke liye halka glow jab active ho */
+.slick-dots li.slick-active button {
+  animation: dotGlow 2s infinite ease-in-out;
 }
-.animate-border:hover {
-  border-width: 1px;
-  border-style: dashed;
-  animation: borderRotate 3s infinite linear;
+
+@keyframes dotGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(214, 40, 57, 0.6); }
+  50% { box-shadow: 0 0 18px rgba(255, 107, 122, 0.9); }
 }
-/*these are below dots of pojects*/
-@keyframes dotColorChange {
-  0% {
-    color: rgb(233, 173, 45);
-  }
-  25% {
-    color: rgb(233, 67, 45);
-  }
-  50% {
-    color: rgb(76, 230, 45);
-  } /* Gold */
-  75% {
-    color: rgb(45, 230, 122);
-  } /* Gold */
-  100% {
-    color: rgb(155, 14, 174);
-  }
-}
-.slick-dots li.slick-active button:before {
-  animation: dotColorChange 2s infinite ease-in-out;
-}
-/*  these are left and right arrow of project  */
-@keyframes arrowColorChange {
-  0% {
-    color: rgb(233, 173, 45);
-  }
-  25% {
-    color: rgb(233, 67, 45);
-  }
-  50% {
-    color: rgb(76, 230, 45);
-  } /* Gold */
-  75% {
-    color: rgb(45, 230, 122);
-  } /* Gold */
-  100% {
-    color: rgb(155, 14, 174);
-  } /* Back to yellow */
-}
+
+/* Arrows (agar default use hon) */
 .slick-prev:before,
 .slick-next:before {
-  animation: arrowColorChange 2s infinite ease-in-out ;
+  color: var(--red-soft) !important;
 }
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: var(--red) !important;
+}
+
+/* ============================================================
+   GLOWING HR — red theme (agar kahin use ho)
+   ============================================================ */
 @keyframes glowEffect {
-    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(173, 216, 230, 0.8); }
-    50% { box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 20px rgba(173, 216, 230, 1); }
-    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(173, 216, 230, 0.8); }
+  0% { box-shadow: 0 0 5px rgba(214, 40, 57, 0.4), 0 0 10px rgba(214, 40, 57, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(255, 107, 122, 0.7), 0 0 20px rgba(255, 107, 122, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(214, 40, 57, 0.4), 0 0 10px rgba(214, 40, 57, 0.3); }
 }
+
 .glowing-hr {
-    height: 2px;
-    border: none;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.8));
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(173, 216, 230, 0.8);
-    animation: glowEffect 1s infinite alternate;
-}
-#projimg {
-    transition: box-shadow 0.5s ease-in-out;
-}
-#projimg:hover {
-    box-shadow: 0px 4px 8px 2px rgba(255, 255, 255, 0.733);
-}
-#projbutton:hover{
-        background-color: #59ff90b9;
-        color:rgb(49, 48, 48);
-}
-#projbutton{
-  font-family:Verdana;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-  border-top: none; /* Transparent top border */
-  border-radius: 0px 0px 6px 6px;
-  animation: borderColorChange 3s infinite alternate;
-}
-@keyframes borderColorChange {
-  0% {
-    border-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-  }
-  10% {
-    border-color: rgba(255, 74, 74, 0.747); /* Semi-transparent white */
-  }
-  20% {
-    border-color: rgba(136, 255, 0, 0.836); /* Semi-transparent white */
-  }
-  30% {
-    border-color: rgba(107, 250, 255, 0.795); /* Semi-transparent white */
-  }
-  40% {
-    border-color: rgba(221, 59, 253, 0.801); /* Semi-transparent white */
-  }
-  50% {
-    border-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
-  }
-  60% {
-    border-color: rgba(0, 0, 255, 0.5); /* Semi-transparent blue */
-  }
-  70% {
-    border-color: rgb(187, 255, 0); /* Semi-transparent blue */
-  }
-  60% {
-    border-color: rgba(255, 0, 34, 0.904); /* Semi-transparent blue */
-  }
-  60% {
-    border-color: rgba(255, 0, 157, 0.932); /* Semi-transparent blue */
-  }
-  60% {
-    border-color: rgba(0, 255, 13, 0.973); /* Semi-transparent blue */
-  }
-}
- /* Projects Styling End */
- #skillsbg{
-  background-color: #c9ffe027;
- }
- #ins:hover {
-  color: rgba(193, 53, 132, 1); /* Instagram's logo color */
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, transparent, rgba(214, 40, 57, 0.8), transparent);
+  animation: glowEffect 2s infinite alternate;
 }
 
-/* this is contact form styling  */
-
-#movingGradientButton {
-  position: relative;
-  background: linear-gradient(90deg, #59ffa0, white, #59ffa0);
-  background-size: 200% 100%;
-  animation: gradientMove 3s ease-in-out infinite alternate;
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
+/* ============================================================
+   VIGNETTE (image par dark corners — agar use ho)
+   ============================================================ */
 .vignette {
   position: relative;
 }
@@ -200,37 +140,48 @@
   pointer-events: none;
 }
 
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* Pump — scale in/out */
 @keyframes pump {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .animate-pump {
   animation: pump 2s infinite ease-in-out;
 }
 
-#urlink li {
-  position: relative;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  user-select: none; /* Prevent text selection */
-}
-#urlink li::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px; 
-  background-color: #ffffff; 
-  transition: width 0.3s ease; 
+/* Fade up — Back to Top button ke liye */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-#urlink li:hover::after {
-  width: 100%;
+.animate-fade-up {
+  animation: fade-up 0.4s ease-out;
+}
+
+/* Slow spin (agar kahin zaroorat ho) */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+/* ============================================================
+   REDUCED MOTION — accessibility (jo log animation off rakhte hain)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

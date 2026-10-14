@@ -1,116 +1,145 @@
-import React from 'react'
-import ServicesData from '../Database/ServicesData'
+import React from 'react';
+import ServicesData from '../Database/ServicesData';
 import { Element } from 'react-scroll';
-import { ArrowUpRight, Sparkles } from 'lucide-react'; // Install lucide-react for icons
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 const Services = () => {
     return (
         <Element name="Services">
-            <section id="Services" className="relative md:m-8 mt-10 md:py-20 py-12 rounded-3xl bg-[#0A0A0A] overflow-hidden">
-                {/* Animated Background Elements */}
+            <section
+                id="Services"
+                className="relative bg-[#0D0B0B] font-body overflow-hidden py-24 px-6"
+            >
+                {/* ================= BACKGROUND (hero jaisa) ================= */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#59ffa0]/5 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#59ffa0]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#59ffa0]/[0.02] via-transparent to-transparent"></div>
+                    {/* Grid pattern */}
+                    <div className="absolute inset-0 opacity-[0.06]" style={{
+                        backgroundImage: "linear-gradient(#D62839 1px, transparent 1px), linear-gradient(90deg, #D62839 1px, transparent 1px)",
+                        backgroundSize: "80px 80px",
+                        maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+                        WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+                    }} />
+                    {/* Soft glows */}
+                    <div className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-[#D62839]/15 blur-[160px] rounded-full" />
+                    <div className="absolute -bottom-32 right-1/4 w-[450px] h-[450px] bg-[#D62839]/10 blur-[160px] rounded-full" />
                 </div>
 
-                {/* Section Header */}
-                <div className="relative z-10 px-4">
-                    <div className="flex items-center justify-center gap-2 mb-4" data-aos="fade-down">
-                        <Sparkles className="w-5 h-5 text-[#59ffa0] animate-pulse" />
-                        <span className="text-[#59ffa0] text-sm font-medium tracking-widest uppercase">What I Offer</span>
-                        <Sparkles className="w-5 h-5 text-[#59ffa0] animate-pulse" />
+                {/* Giant outline text background */}
+                <h2
+                    className="absolute top-6 left-1/2 -translate-x-1/2 font-display text-[16vw] md:text-[10rem] font-extrabold leading-none text-transparent select-none pointer-events-none"
+                    style={{ WebkitTextStroke: "1px rgba(214,40,57,0.25)" }}
+                >
+                    SERVICES
+                </h2>
+
+                {/* ================= SECTION HEADER ================= */}
+                <div className="relative z-10 px-4 flex flex-col items-center">
+                    {/* Badge */}
+                    <div className="flex items-center gap-4" data-aos="zoom-in">
+                        <span className="h-px w-12 bg-[#D62839]" />
+                        <span className="text-[#FF6B7A] text-xs md:text-sm font-bold tracking-[0.4em] uppercase">
+                            What I Offer
+                        </span>
+                        <span className="h-px w-12 bg-[#D62839]" />
                     </div>
-                    
-                    <h2 
-                        data-aos="zoom-in" 
-                        className="text-center text-3xl md:text-5xl font-bold mb-6 cursor-none text-white relative inline-block w-full"
+
+                    {/* Heading */}
+                    <h2
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                        className="mt-5 font-display text-center text-4xl md:text-6xl font-extrabold text-[#F5F3EF]"
                     >
-                        My <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#59ffa0] to-[#00d4ff]">Services</span>
+                        My <span className="text-blood-gradient">Services</span>
                     </h2>
-                    
-                    <div className="flex justify-center mb-12" data-aos="fade-up">
-                        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#59ffa0] to-transparent rounded-full shadow-[0_0_20px_rgba(89,255,160,0.5)]"></div>
-                    </div>
+
+                    {/* Sub-text */}
+                    <p data-aos="fade-up" className="mt-5 max-w-xl text-center text-sm md:text-base text-[#F5F3EF]/60 leading-[1.9]">
+                        From idea to deployment — complete web solutions with clean
+                        code, modern design and production-ready performance.
+                    </p>
                 </div>
 
-                {/* Services Grid */}
-                <div className='relative z-10 grid md:grid-cols-3 grid-cols-1 gap-6 px-4 md:px-12 max-w-7xl mx-auto'>
+                {/* ================= SERVICES GRID ================= */}
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-16 px-2 md:px-8">
                     {ServicesData.map((item, index) => (
-                        <div 
-                            data-aos="fade-up" 
+                        <div
+                            data-aos="fade-up"
                             data-aos-delay={index * 100}
-                            key={item.id} 
-                            className='group relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[#171717] to-[#0f0f0f] border border-white/5 hover:border-[#59ffa0]/30 transition-all duration-500 hover:-translate-y-2'
+                            key={item.id}
+                            className="group relative p-7 md:p-8 rounded-3xl bg-[#151111] border border-[#D62839]/20 hover:border-[#D62839]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(214,40,57,0.25)]"
                         >
-                            {/* Glow Effect on Hover */}
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#59ffa0]/0 to-[#00d4ff]/0 group-hover:from-[#59ffa0]/10 group-hover:to-[#00d4ff]/5 transition-all duration-500 opacity-0 group-hover:opacity-100 blur-xl"></div>
-                            
-                            {/* Card Content */}
+                            {/* Hover glow */}
+                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#D62839]/0 to-transparent group-hover:from-[#D62839]/10 transition-all duration-500 opacity-0 group-hover:opacity-100 blur-xl pointer-events-none" />
+
                             <div className="relative z-10">
-                                {/* Icon Container */}
+                                {/* Icon container */}
                                 <div className="relative mb-6 inline-block">
-                                    <div className="absolute inset-0 bg-[#59ffa0]/20 rounded-xl blur-lg group-hover:bg-[#59ffa0]/40 transition-all duration-500"></div>
-                                    <div className="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border border-white/10 flex items-center justify-center group-hover:border-[#59ffa0]/50 transition-all duration-500 group-hover:scale-110">
-                                        <img 
-                                            className='w-8 h-8 object-contain filter brightness-90 group-hover:brightness-110 group-hover:scale-110 transition-all duration-500' 
-                                            src={item.img} 
+                                    <div className="absolute inset-0 bg-[#D62839]/25 rounded-2xl blur-lg group-hover:bg-[#D62839]/50 transition-all duration-500" />
+                                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1F1515] to-[#141010] border border-[#D62839]/30 flex items-center justify-center group-hover:border-[#D62839]/70 group-hover:scale-110 transition-all duration-500">
+                                        <img
+                                            className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-500"
+                                            src={item.img}
                                             alt={item.name}
                                         />
                                     </div>
                                 </div>
 
                                 {/* Title */}
-                                <h3 className='text-white font-bold text-xl md:text-2xl mb-3 group-hover:text-[#59ffa0] transition-colors duration-300'>
+                                <h3 className="font-display text-[#F5F3EF] font-bold text-xl md:text-2xl mb-3 group-hover:text-[#FF6B7A] transition-colors duration-300">
                                     {item.name}
                                 </h3>
 
                                 {/* Description */}
-                                <p className='text-gray-400 font-medium text-sm md:text-base leading-relaxed mb-6 group-hover:text-gray-300 transition-colors duration-300'>
+                                <p className="text-[#F5F3EF]/55 text-sm md:text-[15px] leading-[1.8] mb-6 group-hover:text-[#F5F3EF]/75 transition-colors duration-300">
                                     {item.details}
                                 </p>
 
-                                {/* Action Button */}
-                                <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block w-full">
-                                    <button className="w-full cursor-pointer group/btn relative overflow-hidden rounded-lg bg-[#1a1a1a] border border-white/10 hover:border-[#59ffa0]/50 p-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(89,255,160,0.2)]">
-                                        <div className="absolute inset-0 bg-gradient-to-r from-[#59ffa0]/0 via-[#59ffa0]/10 to-[#59ffa0]/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                                        <span className="relative flex items-center justify-center gap-2 text-gray-300 font-semibold group-hover/btn:text-[#59ffa0] transition-colors duration-300">
+                                {/* Action button */}
+                                <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                                    <button className="w-full cursor-pointer group/btn relative overflow-hidden rounded-full border border-[#D62839]/40 bg-[#D62839]/10 p-3.5 transition-all duration-300 hover:bg-[#D62839] hover:border-[#D62839] hover:shadow-[0_10px_30px_rgba(214,40,57,0.4)]">
+                                        <span className="relative flex items-center justify-center gap-2 text-sm font-semibold text-[#F5F3EF]/80 group-hover/btn:text-[#F5F3EF] transition-colors duration-300">
                                             Read More
                                             <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                                         </span>
                                     </button>
                                 </a>
                             </div>
-
-                            {/* Corner Accents */}
-                            <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-2xl">
-                                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-[#59ffa0]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Bottom Decoration */}
-                <div className="relative z-10 mt-16 flex justify-center">
-                    <div className="flex items-center gap-2 text-gray-500 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-[#59ffa0] animate-pulse"></div>
-                        <span>Ready to start your project</span>
+                {/* ================= BOTTOM LINE ================= */}
+                <div className="relative z-10 mt-16 flex justify-center" data-aos="fade-up">
+                    <div className="flex items-center gap-2.5 text-[#F5F3EF]/45 text-sm">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B7A] opacity-60" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B7A]" />
+                        </span>
+                        Ready to start your project — let's build something great together.
                     </div>
                 </div>
+
+                {/* ================= STYLES (hero jaisi fonts) ================= */}
+                <style>{`
+                    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
+
+                    .font-display { font-family: 'Syne', sans-serif; }
+                    .font-body { font-family: 'Inter', sans-serif; }
+                    .font-logo { font-family: 'Playfair Display', serif; }
+
+                    .text-blood-gradient {
+                        background: linear-gradient(115deg, #F5F3EF 0%, #FF6B7A 45%, #D62839 100%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        filter: drop-shadow(0 0 18px rgba(214, 40, 57, 0.35));
+                    }
+
+                    ::selection { background: #D62839; color: #F5F3EF; }
+                `}</style>
             </section>
-
-            {/* Custom Styles for additional animations */}
-            <style jsx>{`
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-10px); }
-                }
-                .animate-float {
-                    animation: float 3s ease-in-out infinite;
-                }
-            `}</style>
         </Element>
-    )
-}
+    );
+};
 
-export default Services
+export default Services;

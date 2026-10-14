@@ -1,198 +1,350 @@
-import { useEffect } from "react";
-import img from "../Assets/aboutimg/img12.png";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa"
+import { useEffect, useState } from "react";
+import img from "../Assets/heroimg/img12.png";
+import img13 from "../Assets/heroimg/img15.png";
+import img14 from "../Assets/heroimg/img14.png";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {
+  FaGithub, FaLinkedin, FaTwitter,
+  FaArrowRight, FaDownload, FaMapMarkerAlt, FaEnvelopeOpenText,
+  FaBriefcase, FaProjectDiagram,
+  FaReact, FaNodeJs, FaJs, FaDatabase, FaGitAlt,
+  FaHtml5, FaCss3Alt, FaSass, FaDocker,
+} from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import { Element } from 'react-scroll';
+import { Element } from "react-scroll";
+
+/* ---------- Data ---------- */
+const socials = [
+  { icon: FaGithub, href: "https://github.com/Moheed-Dar", label: "GitHub" },
+  { icon: FaLinkedin, href: "https://linkedin.com/in/moheeddar", label: "LinkedIn" },
+  { icon: FaTwitter, href: "https://twitter.com/moheeddar", label: "Twitter" },
+];
+
+const techStack = [
+  { icon: FaReact, name: "React.js" },
+  { icon: FaNodeJs, name: "Node.js" },
+  { icon: FaJs, name: "JavaScript" },
+  { icon: FaDatabase, name: "MongoDB" },
+  { icon: FaGitAlt, name: "Git" },
+  { icon: FaHtml5, name: "HTML5" },
+  { icon: FaCss3Alt, name: "CSS3" },
+  { icon: FaSass, name: "Sass" },
+  { icon: FaDocker, name: "Docker" },
+];
+
+const stats = [
+  { icon: FaProjectDiagram, value: "10+", label: "Projects Done" },
+  { icon: FaLinkedin, value: "11K+", label: "LinkedIn Followers" },
+  { icon: FaBriefcase, value: "2+", label: "Years Exp." },
+];
+
+/* ---------- 3 Images — smooth crossfade ke liye ---------- */
+const heroImages = [
+  { src: img, alt: "Moheed Dar" },
+  { src: img13, alt: "Moheed Dar 2" },
+  { src: img14, alt: "Moheed Dar 3" },
+];
 
 const HeroSection = () => {
-    useEffect(() => {
-        AOS.init()
-    })
-    return (
-        <Element name="Home" >
-            <div id="Home" className="relative bg-[#050505] pb-10 px-15 rounded-b-2xl pt-10 md:pt-15 flex flex-col items-center text-white overflow-hidden">
-                {/* New Background - Same as Projects/Contact */}
-                <div className="absolute inset-0 pointer-events-none">
-                    {/* Grid Lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-                    
-                    {/* Animated Orbs */}
-                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#59ffa0]/10 rounded-full blur-[100px] animate-pulse"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-pulse delay-1000"></div>
-                    
-                    {/* Floating Particles */}
-                    {[...Array(15)].map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute w-1 h-1 bg-[#59ffa0]/40 rounded-full animate-float-particle"
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                animationDuration: `${8 + Math.random() * 10}s`
-                            }}
-                        />
-                    ))}
-                </div>
+  /* Active image ka index — 0, 1, 2 */
+  const [activeImg, setActiveImg] = useState(0);
 
-                {/* Heading */}
-                <div data-aos="fade-down"
-                    data-aos-duration="2000" className="text-center mt-15 mb-10 relative z-10">
-                    <h1 className="text-3xl md:text-5xl font-bold">
-                        I'm <span className="text-[#59ffa0] italic">Moheed Dar</span>
-                    </h1>
-                    <TypeAnimation
-                        className="text-3xl md:text-4xl mt-2 font-bold border-[#373C46] text-red-300 px-4 py-1 rounded-lg inline-block"
-                        sequence={[
-                            "Full Stack",
-                            2000,
-                            "MERN Stack",
-                            2000,
-                            "Next.js",
-                            2000,
-                            "Javascript+Typescript",
-                            3000,
-                        ]}
-                        wrapper="span"
-                        speed={20}
-                        repeat={Infinity}
-                        cursor={true}
-                    /><br />
-                    <h2 className="text-3xl md:text-4xl mt-2 font-bold">
-                        Developer
-                    </h2>
-                </div>
-                {/* Image + Gradient + Info Boxes */}
-                <div data-aos="fade-right" data-aos-duration="1000" className="relative flex items-center justify-center w-full z-10">
-                    {/* Left Box (Client Review) */}
-                    <div className="absolute left-[-30%] top-15 mt-10 md:block hidden -rotate-15 md:left-10 bg-[#222222c4] p-4 rounded-lg shadow-lg w-45 md:w-56 border border-gray-600">
-                        <h3 className="text-md font-semibold">Turning Ideas into Reality</h3>
-                        <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full ml-2">
-                            5.0
-                        </span>
-                        <p className="text-sm opacity-80 mt-2">
-                            From a blank screen to a fully functional product—let the transformation begin.
-                        </p>
-                    </div>
-                    {/* hire me svg*/}
-                    <div className="absolute w-15 left-58 top-44 h-15 bg-[#a4e4c09c] rounded-full border-2 border-yellow-400 hidden md:flex items-center justify-center animate-pump cursor-pointer">
-                        {/* Rotating Text */}
-                        <svg viewBox="0 0 100 100" className="w-full h-full absolute pointer-events-auto">
-                            <defs>
-                                <path id="circlePath" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
-                            </defs>
-                            <text className="font-bold text-gray-600" fontSize="13">
-                                <textPath xlinkHref="#circlePath" startOffset="0%"> HIRE ME • HIRE ME • HIRE ME • HIRE ME </textPath>
-                            </text>
-                        </svg>
-                        {/* Center Icon */}
-                        <span className="text-yellow-400 text-lg">✈️</span>
-                    </div>
-                    {/* md > screen div1 */}
-                    <div className="absolute left-[-16%] top-50 border sm:ms-15 md:hidden block -rotate-15 bg-[#222222c4] p-4 sm:p-5 rounded-full shadow-lg border-gray-600 overflow-hidden">
-                        <h1 className="text-md text-center font-semibold">Product Developer</h1>
-                    </div>
-                    {/* md> screen div 2 */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[-19%] sm:me-15 me-2 top-10 block md:hidden -rotate-15 sm:p-5 p-4 rounded-full shadow-lg w-42 border bg-[#2222229c] border-gray-600">
-                        <h3 className="text-md text-center font-semibold">UI/UX Designer</h3>
-                    </div>
-                    {/* Right Box */}
-                    <div data-aos="fade-up-left" data-aos-duration="1000" className="absolute right-[10%] me-1 lg:me-10 mt-10 top-15 hidden md:block md:right-0 rotate-15 p-4 rounded-lg shadow-lg w-48 md:w-56 border bg-[#2222229c] border-gray-600">
-                        <h3 className="text-md text-center font-semibold">MY EXPERTISE</h3>
-                        <div className="mt-2">
-                            <p className="flex justify-between text-sm mt-2">
-                                <span>FRONTEND</span> <span>80%</span>
-                            </p>
-                            <div className="w-full h-1 bg-gray-600 rounded-full mt-1">
-                                <div className="h-full bg-green-500 w-[85%] rounded-full"></div>
-                            </div>
-                            <p className="flex justify-between text-sm">
-                                <span>BACKEND</span> <span>70%</span>
-                            </p>
-                            <div className="w-full h-1 bg-gray-600 rounded-full mt-1">
-                                <div className="h-full bg-blue-500 w-[70%] rounded-full"></div>
-                            </div>
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
 
-                            <p className="flex justify-between text-sm mt-2">
-                                <span>CMS</span> <span>55%</span>
-                            </p>
-                            <div className="w-full h-1 bg-gray-600 rounded-full mt-1">
-                                <div className="h-full bg-purple-500 w-[55%] rounded-full"></div>
-                            </div>
+  /* Auto slideshow — har 4 sec mein agli image
+     activeImg dependency se manual click ke baad timer reset ho jata hai */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImg((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [activeImg]);
 
-                        </div>
-                    </div>
+  return (
+    <Element name="Home">
+      <section
+        id="Home"
+        className="relative min-h-screen bg-[#0D0B0B] text-[#F5F3EF] font-body overflow-hidden flex flex-col"
+      >
+        {/* ================= BACKGROUND ================= */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#D6283912_1px,transparent_1px),linear-gradient(to_bottom,#D6283912_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)]" />
+          <div className="absolute -left-44 top-1/4 w-[520px] h-[520px] bg-[#D62839]/15 blur-[160px] rounded-full" />
+          <div className="absolute -right-44 bottom-0 w-[460px] h-[460px] bg-[#D62839]/10 blur-[160px] rounded-full" />
+        </div>
 
-                </div>
-                {/* Image with Gradient Background */}
-                <div className="relative flex justify-center w-full h-96 md:h-110 overflow-visible z-10">
-                    {/* Blue Glow Effect */}
-                    <div className="absolute bottom-0 w-80 h-80 md:w-96 md:h-96 bg-[#59ffa0] opacity-40 blur-3xl rounded-full z-0"></div>
+        {/* ================= VERTICAL SOCIAL RAIL (Desktop) ================= */}
+        <div
+          data-aos="fade-right"
+          className="hidden lg:flex absolute left-8 bottom-28 z-20 flex-col items-center gap-5"
+        >
+          {socials.map(({ icon: Icon, href, label }) => (
+            <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}>
+              <Icon className="text-xl opacity-50 hover:opacity-100 hover:text-[#FF6B7A] hover:drop-shadow-[0_0_8px_rgba(214,40,57,0.8)] hover:scale-125 transition-all duration-300" />
+            </a>
+          ))}
+          <div className="w-px h-20 bg-gradient-to-b from-[#D62839]/70 to-transparent" />
+        </div>
 
-                    {/* Image */}
-                    <img
-                        data-aos="zoom-in-up"
-                        data-aos-duration="1000"
-                        src={img}
-                        alt="Moheed Dar"
-                        className="relative w-70 md:w-80 rounded-bl-full rounded-br-full object-cover z-10"
-                    />
-                </div>
-                {/* Button & Social Icons */}
-                <div className="relative flex flex-col items-center z-10">
-                    {/* Button */}
-                    <a href="#Aboutus">
-                        <button
-                            id="movingGradientButton"
-                            className="absolute top-[20%] cursor-pointer left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-               bg-[#EAF888] text-black font-semibold px-5 py-2 
-               rounded-full shadow-lg z-20 
-               hover:scale-110 transition-transform duration-300 
-               border-2 border-transparent hover:border-white"
-                        >
-                            <span className="relative z-10">Visit My Portfolio</span>
-                        </button>
-                    </a>
-                    {/* Social Icons */}
-                    <div className="flex md:gap-5 gap-3">
-                        <a href="https://github.com/Moheed-Dar" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="text-white text-3xl hover:text-gray-400 transition-colors" />
-                        </a>
-                        <a href="https://twitter.com/moheeddar" target="_blank" rel="noopener noreferrer">
-                            <FaTwitter className="text-white text-3xl hover:text-blue-400 transition-colors" />
-                        </a>
-                        <a href="https://linkedin.com/in/moheeddar" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin className="text-white text-3xl hover:text-blue-600 transition-colors" />
-                        </a>
-                    </div>
-                </div>
+        {/* ================= SCROLL INDICATOR (Desktop) ================= */}
+        <div className="hidden lg:flex absolute right-10 bottom-28 z-20 flex-col items-center gap-3">
+          <span
+            className="text-[10px] tracking-[0.45em] uppercase opacity-40"
+            style={{ writingMode: "vertical-rl" }}
+          >
+            Scroll Down
+          </span>
+          <div className="w-px h-16 bg-gradient-to-b from-[#D62839]/70 to-transparent" />
+        </div>
 
-                {/* Bottom Gradient Line */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#59ffa0]/50 to-transparent z-10"></div>
+        {/* ================= MAIN — SPLIT LAYOUT ================= */}
+        <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-10 px-6 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-36 lg:pb-20">
 
-                {/* Custom Styles */}
-                <style jsx>{`
-                    @keyframes float-particle {
-                        0%, 100% { 
-                            transform: translateY(0) translateX(0); 
-                            opacity: 0;
-                        }
-                        10% { opacity: 1; }
-                        90% { opacity: 1; }
-                        100% { 
-                            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px); 
-                            opacity: 0;
-                        }
-                    }
-                    .animate-float-particle {
-                        animation: float-particle linear infinite;
-                    }
-                `}</style>
+          {/* ---------- LEFT: Intro ---------- */}
+          <div className="w-full lg:w-[56%] flex flex-col items-center lg:items-start text-center lg:text-left">
+
+            {/* Availability badge */}
+            <div
+              data-aos="fade-up"
+              className="inline-flex items-center gap-2.5 border border-[#D62839]/40 bg-[#D62839]/10 px-4 py-2 rounded-full text-xs tracking-wide"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6B7A] opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF6B7A]" />
+              </span>
+              Available for Work
             </div>
-        </Element>
-    );
+
+            {/* Eyebrow */}
+            <p
+              data-aos="fade-up"
+              className="mt-7 flex items-center gap-3 text-[13px] tracking-[0.35em] uppercase opacity-50"
+            >
+              <span className="w-8 h-px bg-[#D62839]" />
+              Hello, I am
+            </p>
+
+            {/* Name */}
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="mt-3 font-logo font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.15] tracking-tight"
+            >
+              Moheed <span className="text-blood-gradient">Dar</span>
+            </h1>
+
+            {/* Typewriter */}
+            <div data-aos="fade-up" data-aos-delay="200" className="mt-4">
+              <TypeAnimation
+                className="text-lg md:text-xl font-medium text-[#FF6B7A]"
+                sequence={[
+                  "Full Stack Developer", 2000,
+                  "MERN Stack Developer", 2000,
+                  "Next.js Developer", 2000,
+                  "UI/UX Enthusiast", 2000,
+                ]}
+                wrapper="span"
+                speed={40}
+                repeat={Infinity}
+                cursor={true}
+              />
+            </div>
+
+            {/* Description */}
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="mt-6 max-w-xl text-[15px] md:text-base leading-[1.9] opacity-65"
+            >
+              I build fast, scalable and pixel-perfect web applications — from
+              clean frontend interfaces to robust backend systems. Turning
+              complex problems into simple, beautiful solutions.
+            </p>
+
+            {/* Meta Row */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-7 gap-y-2.5 mt-7 text-sm opacity-70"
+            >
+              <span className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-[#D62839]" /> Islamabad, PK
+              </span>
+              <span className="flex items-center gap-2">
+                <FaEnvelopeOpenText className="text-[#D62839]" /> moheeddar324@gmail.com
+              </span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="500"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-9"
+            >
+              <a
+                href="#Projects"
+                className="group inline-flex items-center gap-2 bg-[#D62839] text-[#F5F3EF] font-semibold px-7 py-3 rounded-full shadow-[0_10px_30px_rgba(214,40,57,0.35)] hover:bg-[#F5F3EF] hover:text-[#0D0B0B] transition-all duration-300"
+              >
+                Explore My Work
+                <FaArrowRight className="group-hover:translate-x-1.5 transition-transform duration-300" />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1KaLZEL-gqJMMoJmkP3sVRTKxRaNXSGju/view?usp=drive_link"
+                download
+                className="inline-flex items-center gap-2 border border-white/15 text-[#F5F3EF] font-semibold px-7 py-3 rounded-full hover:border-[#D62839]/60 hover:bg-[#D62839]/10 transition-all duration-300"
+              >
+                <FaDownload /> Download CV
+              </a>
+            </div>
+
+            {/* Socials — mobile/tablet only */}
+            <div className="flex lg:hidden gap-3 mt-9" data-aos="fade-up" data-aos-delay="600">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="w-11 h-11 flex items-center justify-center rounded-full border border-[#D62839]/40 bg-[#D62839]/10 hover:bg-[#D62839] transition-all duration-300"
+                >
+                  <Icon className="text-lg" />
+                </a>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="700"
+              className="flex items-center gap-8 md:gap-12 mt-12 pt-8 border-t border-white/10 w-full max-w-xl justify-center lg:justify-start"
+            >
+              {stats.map(({ icon: Icon, value, label }) => (
+                <div key={label} className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-[#D62839]/10 border border-[#D62839]/30 flex items-center justify-center">
+                    <Icon className="text-[#FF6B7A]" />
+                  </div>
+                  <div>
+                    <p className="font-display font-bold text-2xl text-blood-gradient">{value}</p>
+                    <p className="text-[11px] uppercase tracking-wider opacity-50 mt-0.5">{label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ---------- RIGHT: Visual (3-image crossfade) ---------- */}
+          <div data-aos="fade-left" className="relative w-full lg:w-[44%] flex justify-center">
+            <div className="relative w-72 sm:w-80 md:w-96">
+
+              {/* Soft red glow behind image */}
+              <div className="absolute inset-10 bg-[#D62839] blur-[110px] opacity-30 rounded-full z-0" />
+
+              {/* Offset frame */}
+              <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-full rounded-b-3xl border border-[#D62839]/40 z-0" />
+
+              {/* Arch-shaped container — teeno images stacked, crossfade hongi */}
+              <div className="relative rounded-t-full rounded-b-3xl overflow-hidden border border-[#D62839]/50 shadow-[0_25px_70px_rgba(214,40,57,0.25)] z-10 h-[24rem] md:h-[30rem]">
+
+                {heroImages.map((image, i) => (
+                  <img
+                    key={i}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-1000 ease-in-out ${
+                      i === activeImg ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                    }`}
+                  />
+                ))}
+
+                {/* Bottom fade */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0D0B0B] to-transparent pointer-events-none" />
+
+                {/* Slide dots — click karke manually image badlo */}
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+                  {heroImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      aria-label={`Show image ${i + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        i === activeImg
+                          ? "w-7 bg-[#FF6B7A]"
+                          : "w-1.5 bg-white/40 hover:bg-white/70"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Floating chip — React (top-left) */}
+              <div className="absolute -left-3 sm:-left-7 top-16 z-20 flex items-center gap-2 bg-[#151111]/90 backdrop-blur border border-[#D62839]/40 rounded-full px-4 py-2 text-sm shadow-lg animate-float">
+                <FaReact className="text-[#FF6B7A]" /> React.js
+              </div>
+
+              {/* Floating chip — Node (bottom-right) */}
+              <div
+                className="absolute -right-3 sm:-right-7 bottom-16 z-20 flex items-center gap-2 bg-[#151111]/90 backdrop-blur border border-[#D62839]/40 rounded-full px-4 py-2 text-sm shadow-lg animate-float"
+                style={{ animationDelay: "1.5s" }}
+              >
+                <FaNodeJs className="text-[#FF6B7A]" /> Node.js
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* ================= TECH MARQUEE STRIP ================= */}
+        <div className="relative z-10 border-t border-white/5 bg-white/[0.02] py-5 overflow-hidden">
+          <div className="flex w-max gap-14 animate-marquee">
+            {[...techStack, ...techStack].map(({ icon: Icon, name }, i) => (
+              <span
+                key={i}
+                className="flex items-center gap-2.5 text-sm whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity"
+              >
+                <Icon className="text-[#D62839] text-lg" />
+                {name}
+                <span className="w-1 h-1 rounded-full bg-[#D62839]/60 ml-8" />
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= STYLES ================= */}
+        <style>{`
+          /* ---------- Fonts: Syne + Inter + Playfair Display ---------- */
+          @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
+
+          .font-display { font-family: 'Syne', sans-serif; }
+          .font-body { font-family: 'Inter', sans-serif; }
+          .font-logo { font-family: 'Playfair Display', serif; }
+
+          /* ---------- Name gradient ---------- */
+          .text-blood-gradient {
+            background: linear-gradient(115deg, #F5F3EF 0%, #FF6B7A 45%, #D62839 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 18px rgba(214, 40, 57, 0.35));
+          }
+
+          /* ---------- Infinite tech marquee ---------- */
+          @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+          .animate-marquee { animation: marquee 30s linear infinite; }
+          .animate-marquee:hover { animation-play-state: paused; }
+
+          /* ---------- Soft floating badges ---------- */
+          @keyframes float-soft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+          .animate-float { animation: float-soft 4.5s ease-in-out infinite; }
+
+          ::selection { background: #D62839; color: #F5F3EF; }
+        `}</style>
+      </section>
+    </Element>
+  );
 };
 
 export default HeroSection;
