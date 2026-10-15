@@ -91,7 +91,7 @@ const Skills = () => {
       {/* ================================================== */}
       <section
         id="Skills"
-        className="relative bg-[#0D0B0B] text-[#F5F3EF] font-body overflow-hidden pt-28 pb-20 px-6"
+        className="relative bg-[#0D0B0B] text-[#F5F3EF] font-body overflow-hidden pt-32 sm:pt-40 md:pt-28 pb-20 px-5 sm:px-6"
       >
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none">
@@ -105,9 +105,9 @@ const Skills = () => {
           <div className="absolute -bottom-32 right-1/4 w-[450px] h-[450px] bg-[#D62839]/10 blur-[160px] rounded-full" />
         </div>
 
-        {/* Giant outline text */}
+        {/* Giant outline text — ✅ mobile pe upar shift, badge se overlap nahi hoga */}
         <h2
-          className="absolute top-16 left-1/2 -translate-x-1/2 font-display text-[16vw] md:text-[10rem] font-extrabold leading-none text-transparent select-none pointer-events-none"
+          className="absolute top-8 sm:top-10 md:top-16 left-1/2 -translate-x-1/2 font-display text-[16vw] md:text-[10rem] font-extrabold leading-none text-transparent select-none pointer-events-none"
           style={{ WebkitTextStroke: "1px rgba(214,40,57,0.25)" }}
         >
           SKILLS
@@ -115,17 +115,17 @@ const Skills = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
 
-          {/* Badge */}
-          <div data-aos="zoom-in" className="flex items-center gap-4">
-            <span className="h-px w-12 bg-[#D62839]" />
-            <span className="text-[#FF6B7A] text-xs md:text-sm font-bold tracking-[0.4em] uppercase">
+          {/* Badge — ✅ mobile pe compact */}
+          <div data-aos="zoom-in" className="flex items-center gap-3 sm:gap-4">
+            <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
+            <span className="text-[#FF6B7A] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase whitespace-nowrap">
               My Toolbox
             </span>
-            <span className="h-px w-12 bg-[#D62839]" />
+            <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
           </div>
 
           {/* Heading */}
-          <h2 data-aos="zoom-in" className="mt-5 font-display text-4xl md:text-6xl font-extrabold text-center">
+          <h2 data-aos="zoom-in" className="mt-5 font-display text-[2rem] sm:text-4xl md:text-6xl font-extrabold text-center">
             Development <span className="text-blood-gradient">Skills</span>
           </h2>
 
@@ -168,7 +168,7 @@ const Skills = () => {
       {/* ================================================== */}
       <section
         ref={additionalRef}
-        className="relative bg-[#0D0B0B] text-[#F5F3EF] font-body overflow-hidden py-20 px-6 border-t border-white/5"
+        className="relative bg-[#0D0B0B] text-[#F5F3EF] font-body overflow-hidden pt-24 sm:pt-32 md:pt-20 pb-20 px-5 sm:px-6 border-t border-white/5"
       >
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none">
@@ -176,9 +176,9 @@ const Skills = () => {
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#D62839]/10 blur-[150px] rounded-full" />
         </div>
 
-        {/* Giant outline text */}
+        {/* Giant outline text — ✅ mobile pe upar shift */}
         <h2
-          className="absolute top-6 left-1/2 -translate-x-1/2 font-display text-[16vw] md:text-[9rem] font-extrabold leading-none text-transparent select-none pointer-events-none"
+          className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 font-display text-[16vw] md:text-[9rem] font-extrabold leading-none text-transparent select-none pointer-events-none"
           style={{ WebkitTextStroke: "1px rgba(214,40,57,0.2)" }}
         >
           MORE
@@ -188,12 +188,12 @@ const Skills = () => {
 
           {/* Badge + Heading */}
           <div className="add-heading flex flex-col items-center">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-[#D62839]" />
-              <span className="text-[#FF6B7A] text-xs md:text-sm font-bold tracking-[0.4em] uppercase">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
+              <span className="text-[#FF6B7A] text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase whitespace-nowrap">
                 More Than Code
               </span>
-              <span className="h-px w-12 bg-[#D62839]" />
+              <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
             </div>
 
             <h2 className="mt-5 font-display text-3xl md:text-5xl font-extrabold text-center">

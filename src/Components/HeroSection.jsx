@@ -103,7 +103,7 @@ const HeroSection = () => {
         </div>
 
         {/* ================= MAIN — SPLIT LAYOUT ================= */}
-        <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-10 px-6 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-36 lg:pb-20">
+        <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-10 px-5 sm:px-6 md:px-16 lg:px-20 pt-32 pb-16 lg:pt-36 lg:pb-20">
 
           {/* ---------- LEFT: Intro ---------- */}
           <div className="w-full lg:w-[56%] flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -219,20 +219,22 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Stats */}
+            {/* Stats — ✅ mobile pe full width + responsive sizes */}
             <div
               data-aos="fade-up"
               data-aos-delay="700"
-              className="flex items-center gap-8 md:gap-12 mt-12 pt-8 border-t border-white/10 w-full max-w-xl justify-center lg:justify-start"
+              className="flex items-center justify-between gap-2 sm:justify-center sm:gap-8 md:gap-12 lg:justify-start w-full max-w-xl mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10"
             >
               {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-[#D62839]/10 border border-[#D62839]/30 flex items-center justify-center">
-                    <Icon className="text-[#FF6B7A]" />
+                <div key={label} className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 shrink-0 rounded-xl bg-[#D62839]/10 border border-[#D62839]/30 flex items-center justify-center">
+                    <Icon className="text-[#FF6B7A] text-sm sm:text-base" />
                   </div>
                   <div>
-                    <p className="font-display font-bold text-2xl text-blood-gradient">{value}</p>
-                    <p className="text-[11px] uppercase tracking-wider opacity-50 mt-0.5">{label}</p>
+                    <p className="font-display font-bold text-xl sm:text-2xl leading-none text-blood-gradient">{value}</p>
+                    <p className="text-[9px] sm:text-[11px] uppercase tracking-wider opacity-50 mt-1">
+                      {label}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -288,7 +290,7 @@ const HeroSection = () => {
                 <FaReact className="text-[#FF6B7A]" /> React.js
               </div>
 
-              {/* Floating chip — .NET (bottom-left) ✨ NEW */}
+              {/* Floating chip — .NET (bottom-left) */}
               <div
                 className="absolute -left-3 sm:-left-7 bottom-16 z-20 flex items-center gap-2 bg-[#151111]/90 backdrop-blur border border-[#D62839]/40 rounded-full px-4 py-2 text-sm shadow-lg animate-float"
                 style={{ animationDelay: "3s" }}
