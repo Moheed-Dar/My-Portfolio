@@ -19,6 +19,7 @@ const Projectdata = [
         state: "Live",
         link: "https://baddarfurniture.com",
         git: gitimg,
+        type: 'E-commerce'
     },
     {
         image: img3,  // replace with your actual image variable
@@ -28,6 +29,7 @@ const Projectdata = [
         state: "Live",
         link: "https://medicarehospital-xi.vercel.app",
         git: gitimg,
+        type: 'Business'
     },
     {
         image: img1,
@@ -37,6 +39,7 @@ const Projectdata = [
         state: "Live",
         link: "https://go-room.vercel.app",
         git: gitimg,
+        type: 'E-commerce'
         // gitlink: "https://github.com/Moheed-Dar/React-Project-3-Weather-App/tree/main/Weather-app",
     },
     {
@@ -47,6 +50,7 @@ const Projectdata = [
         state: "FYP-Project",
         git: gitimg,
         gitlink: "https://github.com/Moheed-Dar/Social-Media-App",
+        type: 'Social Media'
     },
     {
         image: img11,
@@ -56,6 +60,7 @@ const Projectdata = [
         state: "Live",
         link: "https://glamour-site-5txp.vercel.app/",
         git: gitimg,
+        type: 'E-commerce'
     },
     {
         image: img7,
@@ -64,6 +69,7 @@ const Projectdata = [
         details: "VC Technology is a professional IT services and technology solutions website designed with a modern and responsive interface. The platform showcases company services, solutions, and business offerings with structured layouts, smooth navigation, and optimized performance across devices. The project demonstrates scalable frontend architecture and clean component-based development.",
         state: "Live",
         link: "https://www.vctech.com.au/",
+        type: "Business"
     },
     {
         image: img8,
@@ -81,6 +87,7 @@ const Projectdata = [
         technology: "NextJS, TailwindCSS, MaterialUI",
         details: "A modern eCommerce platform with product browsing, cart management, secure checkout, user authentication, and order tracking.",
         state: "Coming Soon",
+        type: "E-commerce"
         // link: "",
         // git: gitimg,
         // gitlink: " ",
@@ -91,6 +98,7 @@ const Projectdata = [
         technology: "Next.js, TypeScript, Tailwind CSS, API Integration",
         details: "Elite Home Construction is a modern and responsive construction and home beautification website designed to showcase residential and commercial projects. The platform highlights construction services, renovation solutions, interior design work, and project galleries with a clean UI and structured layout. It focuses on professional presentation, responsive design, and smooth user experience.",
         state: "Coming Soon",
+        type: "Business"
         // link: "",
         // git: gitimg,
         // gitlink: " ",
@@ -101,6 +109,7 @@ const Projectdata = [
         technology: "ReactJs, TailwindCSS, ExpressJs, Firebase, JWT",
         details: "A web-based dashboard for real-time analytics, data visualization, and user role management, helping businesses monitor key metrics efficiently.",
         state: "Coming Soon",
+        type: "Business"
         // link: "",
         // git: gitimg,
         // gitlink: "  ",
@@ -111,6 +120,7 @@ const Projectdata = [
     technology: "Next.js, React.js, Tailwind CSS, API Integration",
     details: "Food Recipe Hub is a modern and responsive recipe website that allows users to explore a variety of dishes with detailed ingredients and step-by-step cooking instructions. The platform features categorized recipes, search functionality, and clean UI design to provide an engaging user experience across all devices.",
     state: "Coming Soon",
+        type: "Portfolio"
     // link: "https://your-live-link.com/",   // replace with actual link
     // git: gitimg,
     // gitlink: "https://github.com/Moheed-Dar/Food-Recipe-Hub"

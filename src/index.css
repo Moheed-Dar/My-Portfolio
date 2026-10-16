@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
 @import "tailwindcss";
-
 
 body{
   /* background-color: #1f2421; */
@@ -9,4 +9,5 @@ body{
 }
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }

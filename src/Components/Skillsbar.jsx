@@ -83,24 +83,26 @@ const SkillBar = () => {
     return () => ctx.revert(); // cleanup — StrictMode safe
   }, []);
 
-  /* Ek skill row ka markup */
+  /* Ek skill row ka markup (mobile-tuned) */
   const renderRow = (skill) => (
     <div key={skill.name} className="sb-row group relative" data-percent={skill.percent}>
-      {/* Label + Counter */}
-      <div className="flex justify-between items-end mb-2.5 gap-3">
-        <div>
-          <h3 className="font-display text-sm sm:text-base font-bold text-[#F5F3EF] group-hover:text-[#FF6B7A] transition-colors duration-300">
+      {/* Label + Counter — min-w-0 se wrap safe, counter nowrap */}
+      <div className="flex justify-between items-start sm:items-end gap-2 sm:gap-3 mb-2 sm:mb-2.5">
+        <div className="min-w-0">
+          <h3 className="font-display text-[13px] sm:text-sm md:text-base font-bold text-[#F5F3EF] group-hover:text-[#FF6B7A] transition-colors duration-300 leading-snug">
             {skill.name}
           </h3>
-          <p className="text-[11px] sm:text-xs text-[#F5F3EF]/40 mt-0.5">{skill.detail}</p>
+          <p className="text-[10px] sm:text-[11px] md:text-xs text-[#F5F3EF]/40 mt-0.5 leading-relaxed">
+            {skill.detail}
+          </p>
         </div>
-        <span className="sb-count shrink-0 font-display text-sm sm:text-base font-bold text-[#FF6B7A] bg-[#D62839]/10 border border-[#D62839]/40 px-2.5 py-0.5 rounded-full">
+        <span className="sb-count shrink-0 whitespace-nowrap font-display text-[11px] sm:text-sm md:text-base font-bold text-[#FF6B7A] bg-[#D62839]/10 border border-[#D62839]/40 px-2 sm:px-2.5 py-0.5 rounded-full">
           0%
         </span>
       </div>
 
-      {/* Progress bar */}
-      <div className="relative w-full h-2.5 rounded-full bg-white/5 border border-white/10 overflow-hidden">
+      {/* Progress bar — mobile pe thodi patli */}
+      <div className="relative w-full h-2 sm:h-2.5 rounded-full bg-white/5 border border-white/10 overflow-hidden">
         <div className="sb-bar relative h-full rounded-full bg-gradient-to-r from-[#D62839] via-[#E04A58] to-[#FF6B7A] shadow-[0_0_15px_rgba(214,40,57,0.5)] overflow-hidden">
           {/* Shine sweep */}
           <span className="sb-shine absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
@@ -110,49 +112,46 @@ const SkillBar = () => {
   );
 
   return (
-    <div ref={ref} className="relative py-10 px-4 sm:px-8 md:px-12 font-body">
+    <div ref={ref} className="relative py-8 sm:py-10 px-4 sm:px-8 md:px-12 font-body overflow-hidden">
 
       {/* Top subtle divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#D62839]/40 to-transparent max-w-3xl mx-auto mb-14" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#D62839]/40 to-transparent max-w-3xl mx-auto mb-10 sm:mb-14" />
 
       <div className="mx-auto w-full max-w-5xl">
 
-        {/* ===== Heading ===== */}
-        <div className="sb-heading flex flex-col items-center text-center mb-12">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-[#D62839]" />
-            <span className="text-[#FF6B7A] text-xs md:text-sm font-bold tracking-[0.4em] uppercase">
+        {/* ===== Heading (mobile-tuned) ===== */}
+        <div className="sb-heading flex flex-col items-center text-center mb-10 sm:mb-12 px-2">
+          <div className="flex items-center gap-2.5 sm:gap-4">
+            <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
+            <span className="text-[#FF6B7A] text-[9px] sm:text-xs md:text-sm font-bold tracking-[0.3em] sm:tracking-[0.4em] uppercase whitespace-nowrap">
               Proficiency
             </span>
-            <span className="h-px w-12 bg-[#D62839]" />
+            <span className="h-px w-8 sm:w-12 bg-[#D62839]" />
           </div>
 
-          <h2 className="mt-5 font-display text-3xl md:text-5xl font-extrabold text-[#F5F3EF]">
+          <h2 className="mt-4 sm:mt-5 font-display text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#F5F3EF]">
             My <span className="text-blood-gradient">Expertise</span>
           </h2>
 
-          <p className="mt-4 max-w-md text-sm md:text-base text-[#F5F3EF]/55 leading-[1.9]">
+          <p className="mt-3 sm:mt-4 max-w-xs sm:max-w-md text-xs sm:text-sm md:text-base text-[#F5F3EF]/55 leading-[1.9]">
             A quick snapshot of my core strengths across the stack.
           </p>
         </div>
 
-        {/* ===== Two columns — 3 left, 3 right ===== */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-14 gap-y-10 lg:gap-y-12">
-          <div className="space-y-10">{skillsLeft.map(renderRow)}</div>
-          <div className="space-y-10">{skillsRight.map(renderRow)}</div>
+        {/* ===== Two columns — 3 left, 3 right (mobile pe 1 column) ===== */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 sm:gap-x-14 gap-y-8 sm:gap-y-10 lg:gap-y-12">
+          <div className="space-y-8 sm:space-y-10">{skillsLeft.map(renderRow)}</div>
+          <div className="space-y-8 sm:space-y-10">{skillsRight.map(renderRow)}</div>
         </div>
 
         {/* ===== Bottom divider ===== */}
-        <div className="sb-divider mt-14 h-px bg-gradient-to-r from-transparent via-[#D62839]/50 to-transparent max-w-md mx-auto origin-center" />
+        <div className="sb-divider mt-10 sm:mt-14 h-px bg-gradient-to-r from-transparent via-[#D62839]/50 to-transparent max-w-md mx-auto origin-center" />
       </div>
 
       {/* ===== Styles ===== */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
-
         .font-display { font-family: 'Syne', sans-serif; }
         .font-body { font-family: 'Inter', sans-serif; }
-        .font-logo { font-family: 'Playfair Display', serif; }
 
         .text-blood-gradient {
           background: linear-gradient(115deg, #F5F3EF 0%, #FF6B7A 45%, #D62839 100%);

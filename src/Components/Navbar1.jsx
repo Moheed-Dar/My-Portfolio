@@ -3,17 +3,46 @@ import img from '../Assets/navbarimg/moheed1.png';
 import styled from 'styled-components';
 import { TiThMenu } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
-import { Link } from 'react-scroll';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 /* ---------- Nav links data ---------- */
 const navLinks = [
-  { name: 'Home', to: 'Home' },
-  { name: 'About', to: 'Aboutus' },
-  { name: 'Services', to: 'Services' },
-  { name: 'Skills', to: 'Skills' },
-  { name: 'Projects', to: 'Projects' },
-  { name: 'Contact', to: 'Contact' },
+  { name: 'Home', to: '/', section: 'Home' },
+  { name: 'About', to: '/', section: 'Aboutus' },
+  { name: 'Services', to: '/', section: 'Services' },
+  { name: 'Skills', to: '/skills' },
+  { name: 'Projects', to: '/projects' },
+  { name: 'Contact', to: '/contacts' },
 ];
+
+/* ---------- Custom navigation hook ---------- */
+const useNav = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goTo = (link) => {
+    if (link.section) {
+      // Section home page par hai
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          document
+            .getElementById(link.section)
+            ?.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      } else {
+        document
+          .getElementById(link.section)
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Alag page hai
+      navigate(link.to);
+    }
+  };
+
+  return goTo;
+};
 
 /* ---------- HIRE ME button (red theme) ---------- */
 const StyledWrapper = styled.div`
@@ -141,6 +170,15 @@ const Navbar1 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
+  const goTo = useNav();
+  const location = useLocation();
+
+  /* Active link check */
+  const isActive = (link) => {
+    if (link.section === 'Home') return location.pathname === '/';
+    if (link.section) return false;
+    return location.pathname === link.to;
+  };
 
   return (
     <>
@@ -149,51 +187,53 @@ const Navbar1 = () => {
 
           {/* Logo */}
           <div className="flex items-center cursor-pointer shrink-0">
-            <Link to="Home" smooth={true} duration={500}>
-              <img
-                className="w-28 md:w-32 object-contain"
-                src={img}
-                alt="Moheed Dar Logo"
-              />
-            </Link>
+            <img
+              onClick={() => goTo({ to: '/' })}
+              className="w-28 md:w-32 object-contain"
+              src={img}
+              alt="Moheed Dar Logo"
+            />
           </div>
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-7 font-display text-sm tracking-wide">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                spy={true}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                activeClass="text-[#FF6B7A]"
-                className="text-[#F5F3EF]/70 hover:text-[#FF6B7A] transition-colors duration-300 cursor-pointer relative group"
+              <a
+                key={link.name}
+                href={link.to}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goTo(link);
+                }}
+                className={`cursor-pointer relative group transition-colors duration-300 ${
+                  isActive(link)
+                    ? 'text-[#FF6B7A]'
+                    : 'text-[#F5F3EF]/70 hover:text-[#FF6B7A]'
+                }`}
               >
                 {link.name}
-                {/* Hover underline */}
                 <span className="absolute -bottom-1.5 left-0 w-0 h-px bg-[#D62839] group-hover:w-full transition-all duration-300" />
-              </Link>
+              </a>
             ))}
           </nav>
 
           {/* HIRE ME button (desktop) */}
           <div className="hidden lg:block shrink-0">
             <StyledWrapper>
-              <Link to="Contact" smooth={true} duration={500}>
-                <button className="cursor-pointer font-medium">
-                  HIRE ME
-                  <div id="clip">
-                    <div id="leftTop" className="corner" />
-                    <div id="rightBottom" className="corner" />
-                    <div id="rightTop" className="corner" />
-                    <div id="leftBottom" className="corner" />
-                  </div>
-                  <span id="rightArrow" className="arrow" />
-                  <span id="leftArrow" className="arrow" />
-                </button>
-              </Link>
+              <button
+                onClick={() => goTo({ to: '/contacts' })}
+                className="cursor-pointer font-medium"
+              >
+                HIRE ME
+                <div id="clip">
+                  <div id="leftTop" className="corner" />
+                  <div id="rightBottom" className="corner" />
+                  <div id="rightTop" className="corner" />
+                  <div id="leftBottom" className="corner" />
+                </div>
+                <span id="rightArrow" className="arrow" />
+                <span id="leftArrow" className="arrow" />
+              </button>
             </StyledWrapper>
           </div>
 
@@ -230,33 +270,34 @@ const Navbar1 = () => {
         </button>
 
         {navLinks.map((link) => (
-          <li key={link.to} className="border-b border-white/5 last:border-0">
-            <Link
-              to={link.to}
-              spy={true}
-              smooth={true}
-              duration={500}
-              offset={-70}
-              activeClass="text-[#FF6B7A]"
-              onClick={closeMenu}
-              className="block py-3.5 hover:text-[#FF6B7A] hover:pl-2 transition-all duration-300 cursor-pointer"
+          <li key={link.name} className="border-b border-white/5 last:border-0">
+            <a
+              href={link.to}
+              onClick={(e) => {
+                e.preventDefault();
+                closeMenu();
+                goTo(link);
+              }}
+              className={`block py-3.5 hover:text-[#FF6B7A] hover:pl-2 transition-all duration-300 cursor-pointer ${
+                isActive(link) ? 'text-[#FF6B7A]' : ''
+              }`}
             >
               {link.name}
-            </Link>
+            </a>
           </li>
         ))}
 
         {/* Mobile HIRE ME */}
         <li className="mt-6">
-          <Link
-            to="Contact"
-            smooth={true}
-            duration={500}
-            onClick={closeMenu}
-            className="block text-center bg-[#D62839] text-[#F5F3EF] font-semibold py-3 rounded-full hover:bg-[#FF6B7A] hover:text-[#0D0B0B] transition-all duration-300 cursor-pointer"
+          <button
+            onClick={() => {
+              closeMenu();
+              goTo({ to: '/contacts' });
+            }}
+            className="w-full text-center bg-[#D62839] text-[#F5F3EF] font-semibold py-3 rounded-full hover:bg-[#FF6B7A] hover:text-[#0D0B0B] transition-all duration-300 cursor-pointer"
           >
             HIRE ME
-          </Link>
+          </button>
         </li>
       </ul>
     </>
